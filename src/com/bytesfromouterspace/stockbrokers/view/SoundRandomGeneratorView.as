@@ -48,7 +48,7 @@ package com.bytesfromouterspace.stockbrokers.view {
 
         private function onTimer(event:TimerEvent):void {
             for(var i:int = 0; i < shares.length; i++) {
-                shares[i].update(model.audioSample);
+                shares[i].update(model._nextAudioSample);
             }
         }
 

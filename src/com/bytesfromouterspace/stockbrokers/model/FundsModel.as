@@ -24,6 +24,15 @@ package com.bytesfromouterspace.stockbrokers.model {
             }
         }
 
+        public function validatedWithdraw(amount:Number):Boolean {
+            if(amount == 0) {
+                return true;
+            }
+            var auxFunds:Number = _funds;
+            withdraw(amount);
+            return (auxFunds != _funds);
+        }
+
         public function add(amount:Number):void {
             funds += amount;
         }

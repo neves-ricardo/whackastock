@@ -2,6 +2,8 @@
  * Created by ricardo_neves at bytesfromouterspace.com on 28/02/2015.
  */
 package com.bytesfromouterspace.stockbrokers.model {
+    import com.bytesfromouterspace.stockbrokers.event.SoundRandomGeneratorEvent;
+
     import flash.events.Event;
     import flash.events.EventDispatcher;
     import flash.utils.ByteArray;
@@ -11,6 +13,8 @@ package com.bytesfromouterspace.stockbrokers.model {
         private var _soundPath:String;
         private var _soundData:ByteArray;
         public var numSamples:Number;
+        private var _lastSample:Number = 0;
+        private var _currentValue:Number;
 
         public function SoundRandomGeneratorModel(path:String) {
             super(this);
@@ -31,18 +35,18 @@ package com.bytesfromouterspace.stockbrokers.model {
             while(_soundData.position % 4 != 0) {
                 _soundData.position--;
             }
-            dispatchEvent(new Event(Event.CHANGE));
+            dispatchEvent(new SoundRandomGeneratorEvent(SoundRandomGeneratorEvent.START));
         }
 
-        private var lastSample:Number = 0;
-        public function get audioSample():Number {
+
+        public function get _nextAudioSample():Number {
             var sample:Number = 0;
             var numSamples:int = 0;
             var sampleAvg:Number = 0;
             var min:Number = Number.MAX_VALUE;
             var max:Number = Number.MIN_VALUE;
             while(numSamples < 1024) {
-                while ((sample == 0) || (sample == lastSample)) {
+                while ((sample == 0) || (sample == _lastSample)) {
                     if (_soundData.bytesAvailable > 8) {
                         sample = Math.abs(_soundData.readFloat()); //*3200;
                         _soundData.readFloat();// .position += 4;
@@ -62,8 +66,21 @@ package com.bytesfromouterspace.stockbrokers.model {
                 numSamples++;
             }
             sample = sampleAvg / numSamples;
-            //trace(sample.toFixed(2), min.toFixed(2), max.toFixed(2));
+            trace(sample.toFixed(2), min.toFixed(2), max.toFixed(2));
             return sample+0.5;
+        }
+
+        public function generateAudioRandom():void {
+            currentValue = _nextAudioSample;
+        }
+
+        public function get currentValue():Number {
+            return _currentValue;
+        }
+
+        public function set currentValue(value:Number):void {
+            _currentValue = value;
+            dispatchEvent(new SoundRandomGeneratorEvent(SoundRandomGeneratorEvent.CHANGE, value));
         }
     }
 }

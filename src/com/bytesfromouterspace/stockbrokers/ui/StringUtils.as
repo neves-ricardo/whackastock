@@ -14,17 +14,21 @@ package com.bytesfromouterspace.stockbrokers.ui {
         }
 
         public static function formatCurrency(value:Number):String {
-            var numString:String = value.toString()
-            var result:String = ''
+            var isNegative:Boolean = value < 0;
+            var numString:String = isNegative ? (value*-1).toString() : value.toString();
+            var result:String = '';
 
             while (numString.length > 3)  {
-                var chunk:String = numString.substr(-3)
-                numString = numString.substr(0, numString.length - 3)
-                result = ',' + chunk + result
+                var chunk:String = numString.substr(-3);
+                numString = numString.substr(0, numString.length - 3);
+                result = ',' + chunk + result;
             }
 
             if (numString.length > 0) {
-                result = numString + result
+                result = numString + result;
+            }
+            if(isNegative) {
+                result = "-" + result;
             }
 
             return result + "$";

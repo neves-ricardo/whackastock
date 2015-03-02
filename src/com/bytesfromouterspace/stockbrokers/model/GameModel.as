@@ -9,12 +9,15 @@ package com.bytesfromouterspace.stockbrokers.model {
         public var market:MarketModel;
         public var reputation:ReputationModel;
         public var investors:InvestorsModel;
+        public var generator:SoundRandomGeneratorModel;
 
         public function GameModel() {
             super();
 
+            generator = new SoundRandomGeneratorModel('assets/audio/sample1_cut.mp3');
+
             // Prepare Market
-            market = new MarketModel();
+            market = new MarketModel(generator);
 
             // Prepare reputation, set bonus & penalties
             reputation = new ReputationModel();
@@ -25,7 +28,7 @@ package com.bytesfromouterspace.stockbrokers.model {
             reputation.reputationValueFraudQtdSell = -20;
 
             // Prepare turn timer
-            turn = new TurnModel(10);
+            turn = new TurnModel(1);
 
             // Prepare investors & kingpins
             investors = new InvestorsModel();

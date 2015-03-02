@@ -22,7 +22,7 @@ package com.bytesfromouterspace.stockbrokers.controller {
         }
 
         public function payLoan():void {
-            model.accepted = false;
+            model.requestLoanPay();
         }
     }
 }

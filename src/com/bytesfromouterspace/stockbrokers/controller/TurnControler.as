@@ -43,5 +43,6 @@ package com.bytesfromouterspace.stockbrokers.controller {
         public function resetTimer():void {
             _model.doReset();
         }
+
     }
 }

@@ -6,33 +6,44 @@ package com.bytesfromouterspace.stockbrokers.model {
     import com.bytesfromouterspace.stockbrokers.event.StockShareEvent;
     import com.bytesfromouterspace.stockbrokers.event.TransactionEvent;
 
-    [Event(name="stockShareChanged", type="com.bytesfromouterspace.stockbrokers.event.StockShareEvent")]
-    public class StockShareModel extends BaseModel {
+    import flash.events.Event;
 
+    [Event(name="stockShareChanged", type="com.bytesfromouterspace.stockbrokers.event.StockShareEvent")]
+    public class StockShareModel extends BaseModel implements IHistoryModel {
+
+        private var _history:Vector.<Number>;
         public var stockId:int = 0;
         public var startingValue:Number;
-        public var value:Number;
+        private var _currentValue:Number;
         public var samples:int;
         private var lastSample:Number = 0;
-        public var name:String;
+        private var _name:String;
         private var _quantityAvailable:int = 0;
         private var _quantityOwned:int = 0;
         private var _ownedValue:Number = 0;
-        public var delta:Number = 0;
+        private var _delta:Number = 0;
+        public var marketModifier:Number = 0;
+        private var _totalQuantity:Number = 0;
+        private var _focus:Boolean = false;
+        private var _locked:Boolean = false;
 
-        public function StockShareModel(stockId:int, name:String) {
+        public function StockShareModel(stockId:int, name:String, rand:Number) {
             super();
             this.stockId = stockId;
-            this.name = name;
-            _quantityAvailable = 1000;
-            startingValue = int(Math.random() * 100);
+            this._name = name;
+            _totalQuantity = 1000;
+            _quantityAvailable = _totalQuantity;
+            startingValue = int(rand * 100);
             samples = 0;
-            value = startingValue;
-            lastSample = value;
+            _currentValue = startingValue;
+            lastSample = _currentValue;
+            _history = new Vector.<Number>();
+            _history.push(startingValue);
         }
 
         public var auxDelta:Number;
         private var signal:Number;
+
         public function update(newValue:Number):void {
             /*if(lastSample == 0) {
                 lastSample = newValue;
@@ -45,15 +56,15 @@ package com.bytesfromouterspace.stockbrokers.model {
             //newValue = Math.abs(newValue);
             /*auxDelta = newValue * startingValue;
             if(Math.abs(auxDelta) < (startingValue*0.5)) {
-                value += auxDelta;
+                currentValue += auxDelta;
             } else {
                 signal = newValue > 0 ? 1 : -1;
-                value += (Math.random()*startingValue*signal);
+                currentValue += (Math.random()*startingValue*signal);
             }*/
             auxDelta = newValue * startingValue;
-            value += auxDelta - value;
-            if(value < 0.1 * startingValue) {
-                value = 0.1 * startingValue;
+            _currentValue += auxDelta - _currentValue;
+            if(_currentValue < 0.1 * startingValue) {
+                _currentValue = 0.1 * startingValue;
             }
             samples += 20;
         }
@@ -100,11 +111,12 @@ package com.bytesfromouterspace.stockbrokers.model {
         public function doBuy(amount:int):void {
             _quantityAvailable -= amount;
             if(_quantityOwned > 0) {
-                _ownedValue = (_quantityOwned * _ownedValue + amount * value) / (_quantityOwned + amount);
+                _ownedValue = (_quantityOwned * _ownedValue + amount * _currentValue) / (_quantityOwned + amount);
             } else {
-                _ownedValue = value;
+                _ownedValue = _currentValue;
             }
             _quantityOwned += amount;
+            //marketModifier += amount /
             refresh();
         }
 
@@ -112,6 +124,55 @@ package com.bytesfromouterspace.stockbrokers.model {
             _quantityAvailable += amount;
             _quantityOwned -= amount;
             refresh();
+        }
+
+        public function setMarketInfluence(value:Number):void {
+            var newValue:Number = _currentValue * value;
+            var lastValue:Number = _history[_history.length - 1];
+            _delta = (newValue - lastValue) / lastValue;
+            currentValue = newValue;
+        }
+
+        public function get currentValue():Number {
+            return _currentValue;
+        }
+
+        public function set currentValue(value:Number):void {
+            _currentValue = value;
+            _locked = (_currentValue < (0.1 * startingValue));
+            refresh();
+            addToHistory(value);
+        }
+
+        public function get locked():Boolean {
+            return _locked;
+        }
+
+        public function get delta():Number {
+            return _delta;
+        }
+
+        public function get history():Vector.<Number> {
+            return _history;
+        }
+
+        public function dispatchHistoryChange():void {
+            if(_focus) {
+                dispatchEvent(new Event(Event.CHANGE));
+            }
+        }
+
+        public function set focus(value:Boolean):void {
+            _focus = value;
+        }
+
+        public function get name():String {
+            return _name;
+        }
+
+        public function addToHistory(value:Number):void {
+            _history.push(value);
+            dispatchHistoryChange();
         }
     }
 }

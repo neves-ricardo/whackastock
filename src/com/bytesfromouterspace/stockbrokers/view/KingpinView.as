@@ -4,6 +4,7 @@
 package com.bytesfromouterspace.stockbrokers.view {
 
     import com.bytesfromouterspace.stockbrokers.controller.KingpinController;
+    import com.bytesfromouterspace.stockbrokers.event.KingpinEvent;
     import com.bytesfromouterspace.stockbrokers.model.KingpinModel;
     import com.bytesfromouterspace.stockbrokers.ui.StringUtils;
     import com.bytesfromouterspace.stockbrokers.ui.components.Button;
@@ -26,7 +27,7 @@ package com.bytesfromouterspace.stockbrokers.view {
             super(332, 26);
             this._model = model;
             this._controller = controller;
-            _model.addEventListener(Event.CHANGE, update);
+            _model.addEventListener(KingpinEvent.CHANGE, update);
             graphics.lineStyle(1, 0x297C9D);
             graphics.beginFill(0x164259);
             graphics.drawRect(0,0,_width, _height);
@@ -49,7 +50,7 @@ package com.bytesfromouterspace.stockbrokers.view {
             _btnAccept.setLabel("Accept", 10, 0x666666, "visitor1");
             _btnAccept.x = 266;
             _btnAccept.y = 4;
-            _btnAccept.addEventListener(MouseEvent.CLICK, onAcceptRequested)
+            _btnAccept.addEventListener(MouseEvent.CLICK, onAcceptRequested);
             addChild(_btnAccept);
 
             _btnPay = new Button(60, 17);
@@ -59,7 +60,7 @@ package com.bytesfromouterspace.stockbrokers.view {
             _btnPay.setLabel("Pay", 10, 0x666666, "visitor1");
             _btnPay.x = 266;
             _btnPay.y = 4;
-            _btnPay.addEventListener(MouseEvent.CLICK, onPayRequested)
+            _btnPay.addEventListener(MouseEvent.CLICK, onPayRequested);
             addChild(_btnPay);
 
             update(null);
@@ -90,7 +91,7 @@ package com.bytesfromouterspace.stockbrokers.view {
             }
         }
 
-        private function update(event:Event):void {
+        private function update(event:KingpinEvent):void {
             if(_model.enabled) {
                 if(_model.accepted) {
                     setState(2);

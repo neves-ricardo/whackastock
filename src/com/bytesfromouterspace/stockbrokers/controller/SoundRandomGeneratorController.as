@@ -79,7 +79,7 @@ package com.bytesfromouterspace.stockbrokers.controller {
             }
             trace("Min:", min, "Max:", max, "Samples:", ns, "AVG:", avg / ns);*/
             _model.soundData = _soundData;
-            _sound.play();
+            //_sound.play();
             trace(_soundData.bytesAvailable, _soundData.position, _soundData.length);
         }
 
@@ -100,5 +100,8 @@ package com.bytesfromouterspace.stockbrokers.controller {
         }
 
 
+        public function generate():void {
+            _model.generateAudioRandom();
+        }
     }
 }

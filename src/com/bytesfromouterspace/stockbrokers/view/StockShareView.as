@@ -4,14 +4,19 @@
 package com.bytesfromouterspace.stockbrokers.view {
     import com.bytesfromouterspace.stockbrokers.controller.StockShareController;
     import com.bytesfromouterspace.stockbrokers.event.StockShareEvent;
+    import com.bytesfromouterspace.stockbrokers.model.IHistoryModel;
     import com.bytesfromouterspace.stockbrokers.model.StockShareModel;
     import com.bytesfromouterspace.stockbrokers.ui.MarketTendencyShape;
+    import com.bytesfromouterspace.stockbrokers.ui.components.GraphButton;
+    import com.bytesfromouterspace.stockbrokers.ui.components.GraphButton;
     import com.bytesfromouterspace.stockbrokers.ui.components.Button;
     import com.bytesfromouterspace.stockbrokers.ui.components.ComponentBase;
     import com.bytesfromouterspace.stockbrokers.ui.components.Label;
     import com.bytesfromouterspace.stockbrokers.ui.themes.StyleGroup;
 
     import flash.display.Bitmap;
+    import flash.display.Shape;
+    import flash.events.FocusEvent;
     import flash.events.MouseEvent;
 
     public class StockShareView extends ComponentBase {
@@ -20,6 +25,7 @@ package com.bytesfromouterspace.stockbrokers.view {
 
         protected var _styles:StyleGroup;
         protected var _label:Bitmap;
+        protected var _graphButton:GraphButton;
         protected var _lblQtdAvailable:Label;
         private var _lblPriceMarket:Label;
         private var _lblQtdOwned:Label;
@@ -35,6 +41,8 @@ package com.bytesfromouterspace.stockbrokers.view {
 
         private var _enabled:Boolean;
         private var _controller:StockShareController;
+        private var _lockedShape:Shape;
+        private var _lockedLabel:Bitmap;
 
         public function StockShareView(stockModel:StockShareModel, stockController:StockShareController) {
             super(160, 152);
@@ -47,9 +55,13 @@ package com.bytesfromouterspace.stockbrokers.view {
             _model.refresh();
         }
 
+        public function get model():IHistoryModel {
+            return _model;
+        }
+
         private function onStockShareChange(event:StockShareEvent):void {
             _lblQtdAvailable.text = _model.quantityAvailable.toString();
-            _lblPriceMarket.text = _model.value.toString();
+            _lblPriceMarket.text = _model.currentValue.toFixed(2);
             _lblQtdOwned.text = _model.quantityOwned.toString();
             _lblPriceOwned.text = _model.ownedValue.toFixed(2);
             if(_model.delta > 0) {
@@ -57,11 +69,12 @@ package com.bytesfromouterspace.stockbrokers.view {
                 _lblTendency.text = "+" + _model.delta.toFixed(2) + "%";
             } else if(_model.delta < 0) {
                 tendency.tendency = MarketTendencyShape.TENDENCY_DOWN;
-                _lblTendency.text = "-" + _model.delta.toFixed(2) + "%";
+                _lblTendency.text = _model.delta.toFixed(2) + "%";
             } else {
                 tendency.tendency = MarketTendencyShape.TENDENCY_EQUAL;
                 _lblTendency.text = "----";
             }
+            enabled = !_model.locked;
         }
 
         public function get enabled():Boolean {
@@ -77,6 +90,8 @@ package com.bytesfromouterspace.stockbrokers.view {
                 _btnSell10.enabled = true;
                 _btnSell100.enabled = true;
                 _btnSell1000.enabled = true;
+                _lockedShape.visible = false;
+                _lockedLabel.visible = false;
             } else {
                 _btnBuy10.enabled = false;
                 _btnBuy100.enabled = false;
@@ -84,6 +99,8 @@ package com.bytesfromouterspace.stockbrokers.view {
                 _btnSell10.enabled = false;
                 _btnSell100.enabled = false;
                 _btnSell1000.enabled = false;
+                _lockedShape.visible = true;
+                _lockedLabel.visible = true;
             }
         }
 
@@ -124,6 +141,13 @@ package com.bytesfromouterspace.stockbrokers.view {
             _label.x = 4;
             _label.y = 4;
             addChild(_label);
+
+
+            _graphButton = new GraphButton();
+            _graphButton.x = _width - 24;
+            _graphButton.y = 2;
+            addChild(_graphButton);
+            _graphButton.addEventListener(MouseEvent.CLICK, onRequestFocus);
 
             var lblAux:Bitmap = theme.createBitmapLabel("Market", 10, 0x00661A, "type_writer");
             lblAux.x = 12;
@@ -237,6 +261,27 @@ package com.bytesfromouterspace.stockbrokers.view {
             lblAux.y = 131;
             addChild(lblAux);
 
+            _lockedShape = new Shape();
+            _lockedShape.graphics.lineStyle(1, 0xFFCC00, 1);
+            _lockedShape.graphics.beginFill(0x212121, 0.4);
+            _lockedShape.graphics.drawRect(0,0,_width, 20);
+            _lockedShape.graphics.endFill();
+            _lockedShape.graphics.beginFill(0x212121, 0.9);
+            _lockedShape.graphics.drawRect(0,20,_width,_height-20);
+            _lockedShape.graphics.endFill();
+            addChild(_lockedShape);
+            _lockedShape.visible = false;
+
+            _lockedLabel = theme.createBitmapLabel("Locked by\n\nMarket\n\nRegulator", 15, 0xFFFFFF, "visitor2");
+            _lockedLabel.x = _width * 0.5 - _lockedLabel.width * 0.5;
+            _lockedLabel.y = _height * 0.5 - _lockedLabel.height * 0.5;
+            addChild(_lockedLabel);
+            _lockedLabel.visible = false;
+
+        }
+
+        private function onRequestFocus(event:MouseEvent):void {
+            dispatchEvent(new FocusEvent(FocusEvent.FOCUS_IN, true, true));
         }
 
         private function onSellAction(event:MouseEvent):void {

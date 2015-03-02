@@ -12,12 +12,20 @@ package com.bytesfromouterspace.stockbrokers.controller {
             this.model = model;
         }
 
+        public function influence(value:Number):void {
+            model.setMarketInfluence(value);
+        }
+
         public function sellToMarket(quantity:int):void {
             model.requestSell(quantity);
         }
 
         public function buyFromMarket(quantity:int):void {
             model.requestBuy(quantity);
+        }
+
+        public function requestFocus():void {
+            
         }
     }
 }

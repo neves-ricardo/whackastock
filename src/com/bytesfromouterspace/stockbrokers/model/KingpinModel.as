@@ -2,8 +2,13 @@
  * Created by Akira on 02/03/2015.
  */
 package com.bytesfromouterspace.stockbrokers.model {
+    import com.bytesfromouterspace.stockbrokers.event.KingpinEvent;
+
     import flash.events.Event;
 
+    [Event(name="change", type="com.bytesfromouterspace.stockbrokers.event.KingpinEvent")]
+    [Event(name="loadAccept", type="com.bytesfromouterspace.stockbrokers.event.KingpinEvent")]
+    [Event(name="loadPay", type="com.bytesfromouterspace.stockbrokers.event.KingpinEvent")]
     public class KingpinModel extends BaseModel{
 
         public var id:int;
@@ -13,6 +18,7 @@ package com.bytesfromouterspace.stockbrokers.model {
         public var amount:int;
         private var _enabled:Boolean;
         private var _paid:Boolean;
+
 
         public function KingpinModel(id:int, minLevel:int, rate:Number, amount:int) {
             super();
@@ -31,7 +37,10 @@ package com.bytesfromouterspace.stockbrokers.model {
 
         public function set accepted(value:Boolean):void {
             _accepted = value;
-            dispatchEvent(new Event(Event.CHANGE));
+            dispatchEvent(new KingpinEvent(KingpinEvent.CHANGE));
+            if(value) {
+                dispatchEvent(new KingpinEvent(KingpinEvent.LOAN_ACCEPT));
+            }
         }
 
         public function get enabled():Boolean {
@@ -40,7 +49,7 @@ package com.bytesfromouterspace.stockbrokers.model {
 
         public function set enabled(value:Boolean):void {
             _enabled = value;
-            dispatchEvent(new Event(Event.CHANGE));
+            dispatchEvent(new KingpinEvent(KingpinEvent.CHANGE));
         }
 
         public function get paid():Boolean {
@@ -49,7 +58,29 @@ package com.bytesfromouterspace.stockbrokers.model {
 
         public function set paid(value:Boolean):void {
             _paid = value;
-            dispatchEvent(new Event(Event.CHANGE));
+            dispatchEvent(new KingpinEvent(KingpinEvent.CHANGE));
+            if(value) {
+                dispatchEvent(new KingpinEvent(KingpinEvent.LOAN_PAY));
+            }
         }
+
+        public function requestLoanPay():void {
+            dispatchEvent(new KingpinEvent(KingpinEvent.LOAN_PAY));
+        }
+
+        public function get interestRateValue():Number {
+            if(_accepted && !_paid) {
+                return amount * rate;
+            }
+            return 0;
+        }
+
+        public function get capitalDue():Number {
+            if(_accepted && !_paid) {
+                return amount * rate + amount;
+            }
+            return 0;
+        }
+
     }
 }

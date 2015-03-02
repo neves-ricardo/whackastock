@@ -36,6 +36,7 @@ package {
             _gameController = new GameController(_gameModel);
             _gameView = new GameView(_gameModel, _gameController);
             addChild(_gameView);
+            _gameController.turn.start();
         }
     }
 }

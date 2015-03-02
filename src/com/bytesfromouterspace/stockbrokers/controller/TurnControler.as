@@ -3,6 +3,7 @@
  */
 package com.bytesfromouterspace.stockbrokers.controller {
     import com.bytesfromouterspace.stockbrokers.event.BonusEvent;
+    import com.bytesfromouterspace.stockbrokers.event.ReputationStatusEvent;
     import com.bytesfromouterspace.stockbrokers.model.TurnModel;
 
     import flash.events.TimerEvent;
@@ -31,12 +32,16 @@ package com.bytesfromouterspace.stockbrokers.controller {
             _tmr.start();
         }
 
-        public function appendTime(value:Number):void {
-            _model.currentTime += value;
+        public function handleLevelUp(event:ReputationStatusEvent):void {
+            _model.resets++;
         }
 
         public function handleBonus(event:BonusEvent):void {
             _model.bonus(event.bonusCategory);
+        }
+
+        public function resetTimer():void {
+            _model.doReset();
         }
     }
 }

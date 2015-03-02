@@ -9,7 +9,7 @@ package com.bytesfromouterspace.stockbrokers.ui.components {
 
         private var innerBar:Shape;
         private var _targetValue:Number;
-        private var _animSpeed:Number;
+        public var animSpeed:Number;
 
         public function ProgressBar(_width:Number, _height:Number = 12) {
             super(_width, _height);
@@ -27,12 +27,15 @@ package com.bytesfromouterspace.stockbrokers.ui.components {
         }
 
         public function setProgress(value:Number, animate:Boolean = true):void {
+            if(value > 1) {
+                value = 1;
+            }
             if(!animate) {
                 innerBar.scaleX = value;
             } else {
                 if(value != innerBar.scaleX) {
                     _targetValue = value;
-                    _animSpeed = (_targetValue > innerBar.scaleX) ? -0.1 : 0.1;
+                    animSpeed = (_targetValue > innerBar.scaleX) ? -0.1 : 0.1;
                     if (!hasEventListener(Event.ENTER_FRAME)) {
                         addEventListener(Event.ENTER_FRAME, onAnimate)
                     }
@@ -46,19 +49,19 @@ package com.bytesfromouterspace.stockbrokers.ui.components {
 
         private function onAnimate(event:Event):void {
             var completed:Boolean = false;
-            if(_animSpeed > 0) {
-                if(innerBar.scaleX + _animSpeed >= _targetValue) {
+            if(animSpeed > 0) {
+                if(innerBar.scaleX + animSpeed >= _targetValue) {
                     innerBar.scaleX = _targetValue;
                     completed = true;
                 } else {
-                    innerBar.scaleX += _animSpeed;
+                    innerBar.scaleX += animSpeed;
                 }
             } else {
-                if(innerBar.scaleX + _animSpeed <= _targetValue) {
+                if(innerBar.scaleX + animSpeed <= _targetValue) {
                     innerBar.scaleX = _targetValue;
                     completed = true;
                 } else {
-                    innerBar.scaleX += _animSpeed;
+                    innerBar.scaleX += animSpeed;
                 }
             }
             if(completed) {

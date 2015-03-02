@@ -8,6 +8,7 @@ package com.bytesfromouterspace.stockbrokers.model {
         public var turn:TurnModel;
         public var market:MarketModel;
         public var reputation:ReputationModel;
+        public var investors:InvestorsModel;
 
         public function GameModel() {
             super();
@@ -23,12 +24,13 @@ package com.bytesfromouterspace.stockbrokers.model {
             reputation.reputationValueFraudQtdBuy = -5;
             reputation.reputationValueFraudQtdSell = -20;
 
-            // Link market events to reputation handler
-            // market.addEventListener(ReputationEvent.REPUTATION_EVENT, reputation.reputationHandler);
-
+            // Prepare turn timer
             turn = new TurnModel(10);
-            // Link turn to rep bonus
-            //reputation.addEventListener(BonusEvent.BONUS_EVENT, turn.bo)
+
+            // Prepare investors & kingpins
+            investors = new InvestorsModel();
+
+
         }
 
     }

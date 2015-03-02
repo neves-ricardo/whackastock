@@ -7,12 +7,13 @@ package com.bytesfromouterspace.stockbrokers.model {
     [Event(name="timerStarted", type="com.bytesfromouterspace.stockbrokers.event.TurnEvent")]
     [Event(name="timerEnded", type="com.bytesfromouterspace.stockbrokers.event.TurnEvent")]
     [Event(name="timerTick", type="com.bytesfromouterspace.stockbrokers.event.TurnEvent")]
-    [Event(name="timerChange", type="com.bytesfromouterspace.stockbrokers.event.TurnEvent")]
+    [Event(name="resetChange", type="com.bytesfromouterspace.stockbrokers.event.TurnEvent")]
     public class TurnModel extends BaseModel{
 
         private var _currentTurn:int;
         private var _totalTime:Number;
         private var _currentTime:Number;
+        private var _resets:int = 0;
 
         public function TurnModel(turnDuration:int) {
             super();
@@ -34,7 +35,6 @@ package com.bytesfromouterspace.stockbrokers.model {
 
         public function set currentTime(value:Number):void {
             _currentTime = value;
-
         }
 
         public function get currentTurn():int {
@@ -61,16 +61,29 @@ package com.bytesfromouterspace.stockbrokers.model {
             }
         }
 
-        public function get progress():Number {
-            return _currentTime / _totalTime;
-        }
-
         public function bonus(bonusCategory:uint):void {
             _currentTime += bonusCategory;
             if(_currentTime > _totalTime) {
                 _currentTime = _totalTime;
             }
             dispatchEvent(new TurnEvent(TurnEvent.TIMER_TICK));
+        }
+
+        public function get resets():int {
+            return _resets;
+        }
+
+        public function set resets(value:int):void {
+            _resets = value;
+            dispatchEvent(new TurnEvent(TurnEvent.RESET_CHANGE));
+        }
+
+        public function doReset():void {
+            if(_resets > 0) {
+                resets--;
+                _currentTime = _totalTime;
+                dispatchEvent(new TurnEvent(TurnEvent.TIMER_TICK));
+            }
         }
     }
 }

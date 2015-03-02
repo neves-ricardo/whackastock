@@ -9,7 +9,7 @@ package com.bytesfromouterspace.stockbrokers.event {
         public static const TIMER_START:String = "timerStarted";
         public static const TIMER_ENDED:String = "timerEnded";
         public static const TIMER_TICK:String = "timerTick";
-        public static const TIMER_CHANGE:String = "timerChange";
+        public static const RESET_CHANGE:String = "resetChange";
 
         public function TurnEvent(type:String, bubbles:Boolean = false, cancelable:Boolean = false) {
             super(type, bubbles, cancelable);

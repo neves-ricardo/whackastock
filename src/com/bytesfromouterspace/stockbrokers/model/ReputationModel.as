@@ -4,7 +4,10 @@
 package com.bytesfromouterspace.stockbrokers.model {
 
     import com.bytesfromouterspace.stockbrokers.event.BonusEvent;
+    import com.bytesfromouterspace.stockbrokers.event.ReputationStatusEvent;
 
+    [Event(name="change", type="com.bytesfromouterspace.stockbrokers.event.ReputationStatusEvent")]
+    [Event(name="levelUp", type="com.bytesfromouterspace.stockbrokers.event.ReputationStatusEvent")]
     [Event(name="bonusEvent", type="com.bytesfromouterspace.stockbrokers.event.BonusEvent")]
     public class ReputationModel extends BaseModel {
 
@@ -21,6 +24,7 @@ package com.bytesfromouterspace.stockbrokers.model {
         public var reputationValueFraudQtdSell:int = -20;
 
         private var _value:int = 0;
+        private var _level:int = 0;
 
         public function ReputationModel() {
             super();
@@ -31,11 +35,24 @@ package com.bytesfromouterspace.stockbrokers.model {
             if(_value < 0) {
                 _value = 0;
             }
+            dispatchEvent(new ReputationStatusEvent(ReputationStatusEvent.CHANGE));
             checkReputationLevel();
         }
 
+        public function get value():int {
+            return _value;
+        }
+
+        public function get level():int {
+            return _level;
+        }
+
         protected function checkReputationLevel():void {
-            trace("New reputation level:", _value);
+            var curLevel:int = Math.floor(_value / 100);
+            if(curLevel != _level) {
+                _level = curLevel;
+                dispatchEvent(new ReputationStatusEvent(ReputationStatusEvent.LEVEL_UP, _level));
+            }
         }
 
 

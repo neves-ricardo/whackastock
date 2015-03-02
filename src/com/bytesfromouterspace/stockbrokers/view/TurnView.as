@@ -6,6 +6,7 @@ package com.bytesfromouterspace.stockbrokers.view {
     import com.bytesfromouterspace.stockbrokers.controller.TurnControler;
     import com.bytesfromouterspace.stockbrokers.event.TurnEvent;
     import com.bytesfromouterspace.stockbrokers.model.TurnModel;
+    import com.bytesfromouterspace.stockbrokers.ui.StringUtils;
     import com.bytesfromouterspace.stockbrokers.ui.components.BorderBackground;
     import com.bytesfromouterspace.stockbrokers.ui.components.Button;
     import com.bytesfromouterspace.stockbrokers.ui.components.ComponentBase;
@@ -33,6 +34,7 @@ package com.bytesfromouterspace.stockbrokers.view {
             _model.addEventListener(TurnEvent.TIMER_START, onTurnStart);
             _model.addEventListener(TurnEvent.TIMER_ENDED, onTurnEnd);
             _model.addEventListener(TurnEvent.TIMER_TICK, onTurnUpdate);
+            _model.addEventListener(TurnEvent.RESET_CHANGE, onResetChanged);
 
             _background = new BorderBackground(821, 30);
             _background.backgroundColor = 0x017EC1;
@@ -63,15 +65,20 @@ package com.bytesfromouterspace.stockbrokers.view {
             _btnReset.setLabel(" Reset", 9, 0xFFFFFF);
             _btnReset.x = _width - 80;
             _btnReset.y = 5;
-
+            _btnReset.enabled = false;
             _btnReset.addEventListener(MouseEvent.CLICK, onResetTimer);
 
             addChild(_btnReset);
 
-            _resetLabel = new Label(30, 20, "00", 15, 0xFFFFFF, "visitor1", "left");
+            _resetLabel = new Label(30, 20, _model.resets.toString(), 15, 0xFFFFFF, "visitor1", "left");
             _resetLabel.x = _width - 24;
             _resetLabel.y = 7;
             addChild(_resetLabel);
+        }
+
+        private function onResetChanged(event:TurnEvent):void {
+            _btnReset.enabled = (_model.resets > 0) ? true : false;
+            _resetLabel.text = _model.resets.toString();
         }
 
         private function onTurnEnd(event:TurnEvent):void {
@@ -79,23 +86,15 @@ package com.bytesfromouterspace.stockbrokers.view {
         }
 
         private function onTurnStart(event:TurnEvent):void {
-            _turnLabel.text = numPadd(_model.currentTurn);
-        }
-
-        private function numPadd(num:int, digits:int = 2, padder:String = "0"):String {
-            var ret:String = num.toString();
-            while(ret.length < digits) {
-                ret = padder + ret;
-            }
-            return ret;
+            _turnLabel.text = StringUtils.numPadd(_model.currentTurn);
         }
 
         private function onTurnUpdate(event:TurnEvent):void {
-            _turnBar.setProgress(_model.progress)
+            _turnBar.setProgress(_model.currentTime / _model.totalTime);
         }
 
         private function onResetTimer(event:MouseEvent):void {
-            _controller.start();
+            _controller.resetTimer();
         }
     }
 }

@@ -4,26 +4,31 @@
 package com.bytesfromouterspace.stockbrokers.controller {
     import com.bytesfromouterspace.stockbrokers.event.BonusEvent;
     import com.bytesfromouterspace.stockbrokers.event.ReputationEvent;
+    import com.bytesfromouterspace.stockbrokers.event.ReputationStatusEvent;
     import com.bytesfromouterspace.stockbrokers.model.GameModel;
 
     public class GameController {
 
-        private var _gameModel:GameModel;
-        public var marketController:MarketController;
-        public var turnController:TurnControler;
-        public var reputationController:ReputationController;
+        private var _game:GameModel;
+        public var market:MarketController;
+        public var turn:TurnControler;
+        public var reputation:ReputationController;
+        public var investors:InvestorsController;
 
         public function GameController(model:GameModel) {
-            this._gameModel = model;
-            marketController = new MarketController(model.market);
-            turnController = new TurnControler(model.turn);
-            reputationController = new ReputationController(model.reputation);
+            this._game = model;
+            market = new MarketController(model.market);
+            turn = new TurnControler(model.turn);
+            reputation = new ReputationController(model.reputation);
+            investors = new InvestorsController(model.investors);
 
             // link market to reputation
-            _gameModel.market.addEventListener(ReputationEvent.REPUTATION_EVENT, reputationController.reputationHandler);
+            _game.market.addEventListener(ReputationEvent.REPUTATION_EVENT, reputation.reputationHandler);
 
             // link reputation to turn bonus
-            _gameModel.reputation.addEventListener(BonusEvent.BONUS_EVENT, turnController.handleBonus);
+            _game.reputation.addEventListener(BonusEvent.BONUS_EVENT, turn.handleBonus);
+            _game.reputation.addEventListener(ReputationStatusEvent.LEVEL_UP, turn.handleLevelUp);
+            _game.reputation.addEventListener(ReputationStatusEvent.LEVEL_UP, investors.handleLevelChange);
 
         }
     }

@@ -6,7 +6,7 @@ package com.bytesfromouterspace.stockbrokers.event {
 
     public class ReputationEvent extends Event {
 
-        public static const REPUTATION_EVENT:String = "fraudEvent";
+        public static const REPUTATION_EVENT:String = "reputationEvent";
 
         public var repType:uint;
         public var repAmount:int;

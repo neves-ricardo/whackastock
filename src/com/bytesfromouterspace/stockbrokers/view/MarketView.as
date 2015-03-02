@@ -28,9 +28,10 @@ package com.bytesfromouterspace.stockbrokers.view {
                 _stockViews[i] = stockView;
                 positionX += gap + stockView.width;
                 addChild(stockView);
-                if(i == 4) {
+                if((i == 4) || (i == 9)) {
                     positionX = 0;
-                    positionY = stockView.height + gap;
+                    positionY += stockView.height + gap;
+                    _stockViews[i].x += 1; // gap adjust
                 }
             }
         }

@@ -4,9 +4,13 @@
 package com.bytesfromouterspace.stockbrokers.model {
     import com.bytesfromouterspace.stockbrokers.event.ReputationEvent;
 
+    import flash.events.Event;
+
+    [Event(name="change", type="flash.events.Event")]
+    [Event(name="reputationEvent", type="com.bytesfromouterspace.stockbrokers.event.ReputationEvent")]
     public class FundsModel extends BaseModel {
 
-        private var _funds:Number = 700000;
+        private var _funds:Number = 30000;
 
         public function FundsModel() {
             super();
@@ -14,22 +18,27 @@ package com.bytesfromouterspace.stockbrokers.model {
 
         public function withdraw(amount:Number):void {
             if(_funds >= amount) {
-                _funds -= amount;
+                funds -= amount;
             } else {
                 dispatchEvent(new ReputationEvent(ReputationModel.REP_TYPE_FRAUD_INSUFFICIENT_FUNDS));
             }
         }
 
         public function add(amount:Number):void {
-            _funds += amount;
+            funds += amount;
         }
 
         public function get available():Number {
             return _funds;
         }
 
-        public function set funds(value:Number):void {
+        private function set funds(value:Number):void {
             _funds = value;
+            dispatchEvent(new Event(Event.CHANGE));
+        }
+
+        private function get funds():Number {
+            return _funds;
         }
     }
 }

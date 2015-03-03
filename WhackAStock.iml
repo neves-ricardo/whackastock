@@ -2,7 +2,7 @@
 <module type="Flex" version="4">
   <component name="FlexBuildConfigurationManager" active="StockBrokers">
     <configurations>
-      <configuration name="StockBrokers" pure-as="true" main-class="Main" output-file="Main.swf" output-folder="$MODULE_DIR$/out/production/StockBrokers">
+      <configuration name="StockBrokers" pure-as="true" main-class="WackAStock" output-file="Main.swf" output-folder="$MODULE_DIR$/out/production/StockBrokers">
         <dependencies target-player="11.1">
           <sdk name="4.6.0" />
         </dependencies>

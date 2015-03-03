@@ -82,7 +82,7 @@ package com.bytesfromouterspace.stockbrokers.view {
             var max:Number = Number.MIN_VALUE;
             var total:Number = 0;
             var data:Vector.<Number> = model.history;
-            var i;
+            var i:int;
             var len:int = data.length;
             for(i=0; i < len; i++) {
                 total += data[i];
@@ -95,7 +95,7 @@ package com.bytesfromouterspace.stockbrokers.view {
             }
             var avg:Number = total / len;
 
-            var py;
+            var py:int;
             var step:int = 0;
             plotArea.graphics.lineStyle(1, 0x0000FF);
             py = 128 * (data[0] / max);

@@ -28,10 +28,10 @@ package com.bytesfromouterspace.stockbrokers.controller {
         }
 
         private function onGeneratorChanged(event:SoundRandomGeneratorEvent):void {
-            _model.addToHistory(event.number);
             for(var i:int = 0; i < stockControllers.length; i++) {
                 stockControllers[i].influence(event.number);
             }
+            _model.addToHistory(_model.marketValue);
         }
 
         private function onTransaction(event:TransactionEvent):void {

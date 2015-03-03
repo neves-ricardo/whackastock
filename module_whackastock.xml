@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_whackastock" default="compile.module.whackastock">
+  <dirname property="module.whackastock.basedir" file="${ant.file.module_whackastock}"/>
+  
+  <property name="module.jdk.home.whackastock" value="${jdk.home.4.6.0}"/>
+  <property name="module.jdk.bin.whackastock" value="${jdk.bin.4.6.0}"/>
+  <property name="module.jdk.classpath.whackastock" value="jdk.classpath.4.6.0"/>
+  
+  <property name="compiler.args.whackastock" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="whackastock.output.dir" value="${module.whackastock.basedir}/out/production/WhackAStock"/>
+  <property name="whackastock.testoutput.dir" value="${module.whackastock.basedir}/out/test/WhackAStock"/>
+  
+  <path id="whackastock.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="whackastock.module.production.classpath">
+    <path refid="${module.jdk.classpath.whackastock}"/>
+  </path>
+  
+  <path id="whackastock.runtime.production.module.classpath">
+    <pathelement location="${whackastock.output.dir}"/>
+  </path>
+  
+  <path id="whackastock.module.classpath">
+    <path refid="${module.jdk.classpath.whackastock}"/>
+    <pathelement location="${whackastock.output.dir}"/>
+  </path>
+  
+  <path id="whackastock.runtime.module.classpath">
+    <pathelement location="${whackastock.testoutput.dir}"/>
+    <pathelement location="${whackastock.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.whackastock">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.whackastock">
+    <patternset refid="excluded.from.module.whackastock"/>
+  </patternset>
+  
+  <path id="whackastock.module.sourcepath">
+    <dirset dir="${module.whackastock.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.whackastock" depends="compile.module.whackastock.production,compile.module.whackastock.tests" description="Compile module WhackAStock"/>
+  
+  <target name="compile.module.whackastock.production" depends="register.custom.compilers" description="Compile module WhackAStock; production classes">
+    <mkdir dir="${whackastock.output.dir}"/>
+    <javac2 destdir="${whackastock.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.whackastock}/javac">
+      <compilerarg line="${compiler.args.whackastock}"/>
+      <bootclasspath refid="whackastock.module.bootclasspath"/>
+      <classpath refid="whackastock.module.production.classpath"/>
+      <src refid="whackastock.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.whackastock"/>
+    </javac2>
+    
+    <copy todir="${whackastock.output.dir}">
+      <fileset dir="${module.whackastock.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.whackastock.tests" depends="register.custom.compilers,compile.module.whackastock.production" description="compile module WhackAStock; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.whackastock" description="cleanup module">
+    <delete dir="${whackastock.output.dir}"/>
+    <delete dir="${whackastock.testoutput.dir}"/>
+  </target>
+</project>

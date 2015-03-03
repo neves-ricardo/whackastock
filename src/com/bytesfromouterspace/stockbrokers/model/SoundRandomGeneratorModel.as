@@ -45,7 +45,7 @@ package com.bytesfromouterspace.stockbrokers.model {
             var sampleAvg:Number = 0;
             var min:Number = Number.MAX_VALUE;
             var max:Number = Number.MIN_VALUE;
-            while(numSamples < 1024) {
+            while(numSamples < 512) {
                 while ((sample == 0) || (sample == _lastSample)) {
                     if (_soundData.bytesAvailable > 8) {
                         sample = Math.abs(_soundData.readFloat()); //*3200;
@@ -61,13 +61,15 @@ package com.bytesfromouterspace.stockbrokers.model {
                 if(sample > max) {
                     max = sample;
                 }
-                //lastSample = sample;
                 sampleAvg += sample;
                 numSamples++;
             }
             sample = sampleAvg / numSamples;
-            trace(sample.toFixed(2), min.toFixed(2), max.toFixed(2));
-            return sample+0.5;
+            //sample -= _lastSample;
+            _lastSample = sample;
+            //trace(sample.toFixed(2), min.toFixed(2), max.toFixed(2));
+
+            return sample - 0.25; //+0.5;
         }
 
         public function generateAudioRandom():void {

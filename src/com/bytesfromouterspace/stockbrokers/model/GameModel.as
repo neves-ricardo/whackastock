@@ -18,6 +18,14 @@ package com.bytesfromouterspace.stockbrokers.model {
 
             // Prepare Market
             market = new MarketModel(generator);
+            // Set starting cash
+            market.startingCash = 250000;
+            // generator influences 30% of stock price
+            market.generatorInfluenceRatio = 0.3;
+            // transactions may influence 10% of stock price
+            market.transactionInfluenceRatio = 0.1;
+            // initialize market
+            market.initialize();
 
             // Prepare reputation, set bonus & penalties
             reputation = new ReputationModel();
@@ -28,7 +36,7 @@ package com.bytesfromouterspace.stockbrokers.model {
             reputation.reputationValueFraudQtdSell = -20;
 
             // Prepare turn timer
-            turn = new TurnModel(1);
+            turn = new TurnModel(12);
 
             // Prepare investors & kingpins
             investors = new InvestorsModel();

@@ -2,15 +2,13 @@
  * Created by ricardo_neves at bytesfromouterspace.com on 28/02/2015.
  */
 package com.bytesfromouterspace.stockbrokers.controller {
+
     import com.bytesfromouterspace.stockbrokers.event.BonusEvent;
     import com.bytesfromouterspace.stockbrokers.event.InvestorsEvent;
-    import com.bytesfromouterspace.stockbrokers.event.KingpinEvent;
     import com.bytesfromouterspace.stockbrokers.event.ReputationEvent;
     import com.bytesfromouterspace.stockbrokers.event.ReputationStatusEvent;
-    import com.bytesfromouterspace.stockbrokers.event.SoundRandomGeneratorEvent;
     import com.bytesfromouterspace.stockbrokers.event.TurnEvent;
     import com.bytesfromouterspace.stockbrokers.model.GameModel;
-    import com.bytesfromouterspace.stockbrokers.model.KingpinModel;
 
     public class GameController {
 
@@ -59,7 +57,8 @@ package com.bytesfromouterspace.stockbrokers.controller {
                 generator.generate();
                 turn.start();
             } else {
-                // game end!
+                trace("GAME END!");
+                _game.turn.removeEventListener(TurnEvent.TIMER_ENDED, onTurnEnded);
             }
         }
 

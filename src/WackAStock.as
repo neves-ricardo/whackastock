@@ -19,9 +19,9 @@ package {
     import flash.events.Event;
     import flash.events.MouseEvent;
 
-    [SWF(width="1280", height="768", backgroundColor="#212121")]
-    public class Main extends Sprite {
-        public function Main() {
+    [SWF(width="840", height="600", backgroundColor="#212121")]
+    public class WackAStock extends Sprite {
+        public function WackAStock() {
             addEventListener(Event.ADDED_TO_STAGE, onStageAdd);
         }
         
@@ -36,7 +36,6 @@ package {
             _gameController = new GameController(_gameModel);
             _gameView = new GameView(_gameModel, _gameController);
             addChild(_gameView);
-            _gameController.startGame();
         }
     }
 }

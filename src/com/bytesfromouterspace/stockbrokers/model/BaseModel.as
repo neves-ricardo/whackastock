@@ -10,5 +10,9 @@ package com.bytesfromouterspace.stockbrokers.model {
         public function BaseModel() {
             super(this);
         }
+
+        public function stat(prop:String, value:Number):void {
+
+        }
     }
 }

@@ -12,8 +12,9 @@ package com.bytesfromouterspace.stockbrokers.model {
 
         private var _funds:Number = 30000;
 
-        public function FundsModel() {
+        public function FundsModel(startingCash:int) {
             super();
+            _funds = startingCash;
         }
 
         public function withdraw(amount:Number):void {

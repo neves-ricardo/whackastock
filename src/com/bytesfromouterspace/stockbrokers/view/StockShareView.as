@@ -75,6 +75,14 @@ package com.bytesfromouterspace.stockbrokers.view {
                 _lblTendency.text = "----";
             }
             enabled = !_model.locked;
+
+            if((_model.quantityOwned > 0) && (_model.currentValue > _model.ownedValue)) {
+                _lblPriceOwned.background.backgroundColor = 0xFF0000;
+            } else {
+                _lblPriceOwned.background.backgroundColor = 0xFFFF93;
+            }
+
+
         }
 
         public function get enabled():Boolean {

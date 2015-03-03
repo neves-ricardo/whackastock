@@ -6,7 +6,7 @@ package com.bytesfromouterspace.stockbrokers.model {
 
     public class GameModel extends BaseModel {
 
-        public static const VERSION:String = "1.0.0";
+        public static const VERSION:String = "1.0.1";
 
         public var turn:TurnModel;
         public var market:MarketModel;

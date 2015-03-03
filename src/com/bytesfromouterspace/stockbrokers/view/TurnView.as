@@ -56,18 +56,17 @@ package com.bytesfromouterspace.stockbrokers.view {
             _turnBar.y = 10;
             addChild(_turnBar);
 
-            _btnReset = new Button(50, 20);
+            _btnReset = new Button(50, 16);
             _btnReset.buttonBackgroundDisabled = 0x666666;
             _btnReset.buttonBackgroundNormal = 0x008C00;
             _btnReset.buttonBackgroundOver = 0xFFCC00;
             _btnReset.buttonBorderNormal = 0xFFFFFF;
             _btnReset.drawBackground();
-            _btnReset.setLabel(" Reset", 9, 0xFFFFFF);
+            _btnReset.setLabel(" Reset", 10, 0xFFFFFF, "visitor1");
             _btnReset.x = _width - 80;
-            _btnReset.y = 5;
+            _btnReset.y = 7;
             _btnReset.enabled = false;
             _btnReset.addEventListener(MouseEvent.CLICK, onResetTimer);
-
             addChild(_btnReset);
 
             _resetLabel = new Label(30, 20, _model.resets.toString(), 15, 0xFFFFFF, "visitor1", "left");
@@ -77,7 +76,7 @@ package com.bytesfromouterspace.stockbrokers.view {
         }
 
         private function onResetChanged(event:TurnEvent):void {
-            _btnReset.enabled = (_model.resets > 0) ? true : false;
+            _btnReset.enabled = (_model.resets > 0);
             _resetLabel.text = _model.resets.toString();
         }
 

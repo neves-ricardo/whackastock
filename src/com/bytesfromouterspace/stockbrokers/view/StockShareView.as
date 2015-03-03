@@ -16,6 +16,7 @@ package com.bytesfromouterspace.stockbrokers.view {
 
     import flash.display.Bitmap;
     import flash.display.Shape;
+    import flash.events.Event;
     import flash.events.FocusEvent;
     import flash.events.MouseEvent;
 
@@ -43,6 +44,7 @@ package com.bytesfromouterspace.stockbrokers.view {
         private var _controller:StockShareController;
         private var _lockedShape:Shape;
         private var _lockedLabel:Bitmap;
+        public var animate:Boolean;
 
         public function StockShareView(stockModel:StockShareModel, stockController:StockShareController) {
             super(160, 152);
@@ -53,6 +55,7 @@ package com.bytesfromouterspace.stockbrokers.view {
             buildUI();
             _model.addEventListener(StockShareEvent.STOCK_SHARE_CHANGED, onStockShareChange);
             _model.refresh();
+            animate = false;
         }
 
         public function get model():IHistoryModel {
@@ -77,12 +80,18 @@ package com.bytesfromouterspace.stockbrokers.view {
             enabled = !_model.locked;
 
             if((_model.quantityOwned > 0) && (_model.currentValue > _model.ownedValue)) {
-                _lblPriceOwned.background.backgroundColor = 0xFF0000;
+                animate = true;
+            } else {
+                animate = false;
+            }
+        }
+
+        public function set blinkOwned(blinkState:Boolean):void {
+            if(blinkState) {
+                _lblPriceOwned.background.backgroundColor = 0xFFCC00;
             } else {
                 _lblPriceOwned.background.backgroundColor = 0xFFFF93;
             }
-
-
         }
 
         public function get enabled():Boolean {

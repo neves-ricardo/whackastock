@@ -34,7 +34,7 @@ package com.bytesfromouterspace.stockbrokers.model {
             super();
             this.stockId = stockId;
             this._name = name;
-            this._totalQuantity = 1000;
+            this._totalQuantity = generateInitialQuantity();
             this._quantityAvailable = _totalQuantity;
             this.startingValue = int(rand * 100);
             this._generatorInfluenceRatio = generatorInfluenceRatio;
@@ -45,6 +45,14 @@ package com.bytesfromouterspace.stockbrokers.model {
             lastSample = _currentValue;
             _history = new Vector.<Number>();
             _history.push(startingValue);
+        }
+
+        private function generateInitialQuantity():int {
+            var qtd:int = Math.random() * 3500 + 1000;
+            while((qtd % 10) != 0){
+                qtd--;
+            }
+            return qtd;
         }
 
         public function refresh():void {
@@ -71,6 +79,10 @@ package com.bytesfromouterspace.stockbrokers.model {
 
         public function get ownedValue():Number {
             return _ownedValue;
+        }
+
+        public function get currentOwnedValue():Number {
+            return _quantityOwned * _currentValue;
         }
 
         public function set ownedValue(value:Number):void {

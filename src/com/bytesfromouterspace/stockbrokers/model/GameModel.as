@@ -2,8 +2,11 @@
  * Created by ricardo_neves at bytesfromouterspace.com on 28/02/2015.
  */
 package com.bytesfromouterspace.stockbrokers.model {
+    import com.bytesfromouterspace.stockbrokers.event.GameEvent;
 
     public class GameModel extends BaseModel {
+
+        public static const VERSION:String = "1.0.0";
 
         public var turn:TurnModel;
         public var market:MarketModel;
@@ -44,5 +47,8 @@ package com.bytesfromouterspace.stockbrokers.model {
 
         }
 
+        public function endGame():void {
+            dispatchEvent(new GameEvent(GameEvent.GAME_OVER));
+        }
     }
 }

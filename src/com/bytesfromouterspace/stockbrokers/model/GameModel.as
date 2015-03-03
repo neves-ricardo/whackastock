@@ -2,8 +2,11 @@
  * Created by ricardo_neves at bytesfromouterspace.com on 28/02/2015.
  */
 package com.bytesfromouterspace.stockbrokers.model {
+    import com.bytesfromouterspace.stockbrokers.event.GameEvent;
 
     public class GameModel extends BaseModel {
+
+        public static const VERSION:String = "1.0.0";
 
         public var turn:TurnModel;
         public var market:MarketModel;
@@ -18,6 +21,14 @@ package com.bytesfromouterspace.stockbrokers.model {
 
             // Prepare Market
             market = new MarketModel(generator);
+            // Set starting cash
+            market.startingCash = 250000;
+            // generator influences 30% of stock price
+            market.generatorInfluenceRatio = 0.3;
+            // transactions may influence 10% of stock price
+            market.transactionInfluenceRatio = 0.1;
+            // initialize market
+            market.initialize();
 
             // Prepare reputation, set bonus & penalties
             reputation = new ReputationModel();
@@ -28,7 +39,7 @@ package com.bytesfromouterspace.stockbrokers.model {
             reputation.reputationValueFraudQtdSell = -20;
 
             // Prepare turn timer
-            turn = new TurnModel(1);
+            turn = new TurnModel(12);
 
             // Prepare investors & kingpins
             investors = new InvestorsModel();
@@ -36,5 +47,8 @@ package com.bytesfromouterspace.stockbrokers.model {
 
         }
 
+        public function endGame():void {
+            dispatchEvent(new GameEvent(GameEvent.GAME_OVER));
+        }
     }
 }

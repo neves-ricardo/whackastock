@@ -26,14 +26,20 @@ package com.bytesfromouterspace.stockbrokers.model {
         private var _totalQuantity:Number = 0;
         private var _focus:Boolean = false;
         private var _locked:Boolean = false;
+        private var _generatorInfluenceRatio:Number;
+        private var _transactionInfluenceRatio:Number;
+        private var _basePriceRatio:Number;
 
-        public function StockShareModel(stockId:int, name:String, rand:Number) {
+        public function StockShareModel(stockId:int, name:String, rand:Number, generatorInfluenceRatio:Number, transactionInfluenceRatio:Number) {
             super();
             this.stockId = stockId;
             this._name = name;
-            _totalQuantity = 1000;
-            _quantityAvailable = _totalQuantity;
-            startingValue = int(rand * 100);
+            this._totalQuantity = generateInitialQuantity();
+            this._quantityAvailable = _totalQuantity;
+            this.startingValue = int(rand * 100);
+            this._generatorInfluenceRatio = generatorInfluenceRatio;
+            this._transactionInfluenceRatio = transactionInfluenceRatio;
+            this._basePriceRatio = 1 - (generatorInfluenceRatio + transactionInfluenceRatio);
             samples = 0;
             _currentValue = startingValue;
             lastSample = _currentValue;
@@ -41,32 +47,12 @@ package com.bytesfromouterspace.stockbrokers.model {
             _history.push(startingValue);
         }
 
-        public var auxDelta:Number;
-        private var signal:Number;
-
-        public function update(newValue:Number):void {
-            /*if(lastSample == 0) {
-                lastSample = newValue;
-                auxDelta = 0;
+        private function generateInitialQuantity():int {
+            var qtd:int = Math.random() * 3500 + 1000;
+            while((qtd % 10) != 0){
+                qtd--;
             }
-            if(Math.abs(newValue/lastSample) > 2) {
-                newValue /= lastSample;
-            }
-            lastSample = newValue;*/
-            //newValue = Math.abs(newValue);
-            /*auxDelta = newValue * startingValue;
-            if(Math.abs(auxDelta) < (startingValue*0.5)) {
-                currentValue += auxDelta;
-            } else {
-                signal = newValue > 0 ? 1 : -1;
-                currentValue += (Math.random()*startingValue*signal);
-            }*/
-            auxDelta = newValue * startingValue;
-            _currentValue += auxDelta - _currentValue;
-            if(_currentValue < 0.1 * startingValue) {
-                _currentValue = 0.1 * startingValue;
-            }
-            samples += 20;
+            return qtd;
         }
 
         public function refresh():void {
@@ -95,6 +81,10 @@ package com.bytesfromouterspace.stockbrokers.model {
             return _ownedValue;
         }
 
+        public function get currentOwnedValue():Number {
+            return _quantityOwned * _currentValue;
+        }
+
         public function set ownedValue(value:Number):void {
             _ownedValue = value;
             refresh();
@@ -116,7 +106,7 @@ package com.bytesfromouterspace.stockbrokers.model {
                 _ownedValue = _currentValue;
             }
             _quantityOwned += amount;
-            //marketModifier += amount /
+            marketModifier += amount / _totalQuantity;
             refresh();
         }
 
@@ -126,11 +116,33 @@ package com.bytesfromouterspace.stockbrokers.model {
             refresh();
         }
 
-        public function setMarketInfluence(value:Number):void {
-            var newValue:Number = _currentValue * value;
+        public function get marketValue():Number {
+            return _currentValue * _totalQuantity;
+        }
+
+        public function setMarketInfluence(influence:Number):void {
+            var randMod:int = Math.random() > 0.6 ? 1 : -1;
             var lastValue:Number = _history[_history.length - 1];
-            _delta = (newValue - lastValue) / lastValue;
-            currentValue = newValue;
+            var base:Number = lastValue; // * _basePriceRatio;
+            var trans:Number = lastValue * _transactionInfluenceRatio * marketModifier * randMod;
+            var inf:Number = lastValue * _generatorInfluenceRatio * influence * randMod;
+            var newPrice:Number = base + trans + inf;
+            if(marketModifier > 0) {
+                marketModifier = marketModifier - 0.1 > 0 ? marketModifier - 0.1 : 0;
+            }
+            _delta = ((newPrice - lastValue) / lastValue)*100;
+            if(stockId == -1) {
+                var fields:Array;
+                if(_history.length == 1) {
+                    fields = ["Turn", "Start", "last", "base", "trans", "inf", "gen", "delta"];
+                    trace("|" + fields.join("\t|") + "\t|");
+                }
+                fields = [_history.length, startingValue.toFixed(2), lastValue.toFixed(2), base.toFixed(2),
+                    trans.toFixed(2), inf.toFixed(2), influence.toFixed(2), _delta.toFixed(2)];
+                trace("|" + fields.join("\t|") + "\t|");
+            }
+
+            currentValue = newPrice;
         }
 
         public function get currentValue():Number {

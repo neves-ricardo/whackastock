@@ -2,15 +2,14 @@
  * Created by ricardo_neves at bytesfromouterspace.com on 28/02/2015.
  */
 package com.bytesfromouterspace.stockbrokers.controller {
+
     import com.bytesfromouterspace.stockbrokers.event.BonusEvent;
+    import com.bytesfromouterspace.stockbrokers.event.GameEvent;
     import com.bytesfromouterspace.stockbrokers.event.InvestorsEvent;
-    import com.bytesfromouterspace.stockbrokers.event.KingpinEvent;
     import com.bytesfromouterspace.stockbrokers.event.ReputationEvent;
     import com.bytesfromouterspace.stockbrokers.event.ReputationStatusEvent;
-    import com.bytesfromouterspace.stockbrokers.event.SoundRandomGeneratorEvent;
     import com.bytesfromouterspace.stockbrokers.event.TurnEvent;
     import com.bytesfromouterspace.stockbrokers.model.GameModel;
-    import com.bytesfromouterspace.stockbrokers.model.KingpinModel;
 
     public class GameController {
 
@@ -20,9 +19,11 @@ package com.bytesfromouterspace.stockbrokers.controller {
         public var reputation:ReputationController;
         public var investors:InvestorsController;
         private var generator:SoundRandomGeneratorController;
+        private var _started:Boolean = false;
 
         public function GameController(model:GameModel) {
             this._game = model;
+
             generator = new SoundRandomGeneratorController(model.generator);
             market = new MarketController(model.market);
             turn = new TurnControler(model.turn);
@@ -47,22 +48,36 @@ package com.bytesfromouterspace.stockbrokers.controller {
         }
 
         public function startGame():void {
+            _started = true;
             generator.start();
             turn.start();
         }
 
         private function onTurnEnded(event:TurnEvent):void {
             // pay interest rates
-            if(market.payLoanedInterestRates(investors.getLoanedInterestRates())) {
-                // update marketRates
-                //market.setRate(generator.process())
+            if(market.payLoanedInterestRates(investors.getLoanedInterestRates()) && market.payTurnTax()) {
                 generator.generate();
                 turn.start();
             } else {
-                // game end!
+                trace("GAME END!");
+                _game.turn.removeEventListener(TurnEvent.TIMER_ENDED, onTurnEnded);
+                _game.endGame();
             }
         }
 
 
+        public function pause():void {
+            if(_started) {
+                turn.pause();
+            }
+        }
+
+        public function resume():void {
+            if(_started) {
+                turn.resume();
+            } else {
+                startGame();
+            }
+        }
     }
 }

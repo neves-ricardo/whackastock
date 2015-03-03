@@ -20,26 +20,32 @@ package com.bytesfromouterspace.stockbrokers.model {
         public var stockShares:Vector.<StockShareModel>;
         public var funds:FundsModel;
         public var generator:SoundRandomGeneratorModel;
+        public var logger:TransactionLogModel;
         private var _focus:Boolean;
+        public var generatorInfluenceRatio:Number;
+        public var transactionInfluenceRatio:Number;
+        public var startingCash:int;
+        public var logCapacity:int = 5;
 
         public function MarketModel(generator:SoundRandomGeneratorModel) {
             super();
             this.generator = generator;
             stockShares = new Vector.<StockShareModel>(MAX_STOCK_SHARES, true);
-            funds = new FundsModel();
             _history = new Vector.<Number>();
-            initShares();
+            //initialize();
         }
 
-        private function initShares():void {
+        public function initialize():void {
+            funds = new FundsModel(startingCash);
+            logger = new TransactionLogModel(logCapacity);
             var rand:Number;
             var totalRand:Number = 0;
             for(var i:int = 0; i < MAX_STOCK_SHARES; i++) {
                 rand = Math.random();
-                stockShares[i] = new StockShareModel(i, _stockShareNames[i], rand);
+                stockShares[i] = new StockShareModel(i, _stockShareNames[i], rand, generatorInfluenceRatio, transactionInfluenceRatio);
                 totalRand += rand;
             }
-            _history.push(totalRand / MAX_STOCK_SHARES);
+            _history.push(marketValue);
         }
 
 
@@ -49,6 +55,14 @@ package com.bytesfromouterspace.stockbrokers.model {
 
         public function signalReputation(repType:uint, repAmount:int = 0):void {
             dispatchEvent(new ReputationEvent(repType, repAmount));
+        }
+
+        public function payTurnTax(tax:int):Boolean {
+            if(funds.validatedWithdraw(tax)) {
+                return true;
+            }
+            signalReputation(ReputationModel.REP_TYPE_FRAUD_INSUFFICIENT_FUNDS);
+            return false;
         }
 
         public function payLoan(loan:KingpinModel):void {
@@ -88,6 +102,22 @@ package com.bytesfromouterspace.stockbrokers.model {
         public function addToHistory(value:Number):void {
             _history.push(value);
             dispatchHistoryChange();
+        }
+
+        public function get marketValue():Number {
+            var _marketValue:Number = 0;
+            for(var i:int = 0; i < stockShares.length; i++) {
+                _marketValue += stockShares[i].marketValue;
+            }
+            return _marketValue;
+        }
+
+        public function get ownedStocksValue():Number {
+            var _stocksValue:Number = 0;
+            for(var i:int = 0; i < stockShares.length; i++) {
+                _stocksValue += stockShares[i].currentOwnedValue;
+            }
+            return _stocksValue;
         }
     }
 }

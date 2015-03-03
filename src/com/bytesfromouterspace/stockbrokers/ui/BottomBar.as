@@ -27,7 +27,7 @@ package com.bytesfromouterspace.stockbrokers.ui {
             addChild(funds);
 
             responsabilities = responsabilitiesView;
-            responsabilities.x = 200;
+            responsabilities.x = 420;
             responsabilities.y = 3;
             addChild(responsabilities);
         }

@@ -44,5 +44,12 @@ package com.bytesfromouterspace.stockbrokers.controller {
             _model.doReset();
         }
 
+        public function resume():void {
+            _tmr.start();
+        }
+
+        public function pause():void {
+            _tmr.stop();
+        }
     }
 }

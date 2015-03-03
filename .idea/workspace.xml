@@ -2,35 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91fc6d73-b877-46c9-89ca-70cee784feb2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/IHistoryModel.as" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/event/InvestorsEvent.as" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/event/KingpinEvent.as" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/MarketHistoryView.as" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/ResponsabilitiesView.as" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/event/SoundRandomGeneratorEvent.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/StockBrokers/Main.swf" afterPath="$PROJECT_DIR$/out/production/StockBrokers/Main.swf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Akira.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Akira.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/components/BlockerPanel.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/event/GameEvent.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/GameOverView.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/HeaderBar.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/HelpView.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/SoundController.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/TransactionLogController.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/TransactionLogModel.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/TransactionLogView.as" />
+      <change type="DELETED" beforePath="E:\IJWorkspaces\StockBrokers\src\com\bytesfromouterspace\stockbrokers\ui\components\BackgroundContainer.as" afterPath="" />
+      <change type="DELETED" beforePath="E:\IJWorkspaces\StockBrokers\src\com\bytesfromouterspace\stockbrokers\ui\components\GroupContainer.as" afterPath="" />
+      <change type="DELETED" beforePath="E:\IJWorkspaces\StockBrokers\src\com\bytesfromouterspace\stockbrokers\ui\components\Panel.as" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/StockBrokers/WackAStock.swf" afterPath="$PROJECT_DIR$/out/production/StockBrokers/WackAStock.swf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/BottomBar.as" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/BottomBar.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/FundsModel.as" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/FundsModel.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/FundsView.as" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/FundsView.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/GameController.as" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/GameController.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/GameModel.as" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/GameModel.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/GameView.as" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/GameView.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/InvestorsController.as" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/InvestorsController.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/InvestorsModel.as" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/InvestorsModel.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/KingpinController.as" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/KingpinController.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/KingpinModel.as" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/KingpinModel.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/KingpinView.as" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/KingpinView.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.as" afterPath="$PROJECT_DIR$/src/Main.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/MarketController.as" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/MarketController.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/MarketModel.as" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/MarketModel.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/SoundRandomGeneratorController.as" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/SoundRandomGeneratorController.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/SoundRandomGeneratorModel.as" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/SoundRandomGeneratorModel.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/SoundRandomGeneratorView.as" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/SoundRandomGeneratorView.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/StockShareController.as" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/StockShareController.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/MarketView.as" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/MarketView.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/ResponsabilitiesView.as" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/ResponsabilitiesView.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/StockShareModel.as" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/StockShareModel.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/StockShareView.as" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/StockShareView.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/StringUtils.as" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/StringUtils.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/TurnControler.as" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/TurnControler.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/TurnView.as" afterPath="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/TurnView.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WackAStock.as" afterPath="$PROJECT_DIR$/src/WackAStock.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="StockBrokers.iws" />
@@ -62,63 +60,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MarketHistoryView.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/MarketHistoryView.as">
+      <file leaf-file-name="WackAStock.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WackAStock.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2342" max-vertical-offset="3770">
-              <caret line="97" column="18" selection-start-line="97" selection-start-column="18" selection-end-line="97" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="1326">
+              <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#100#164#0" expanded="true" />
+                <element signature="e#15#85#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KingpinModel.as" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/KingpinModel.as">
+      <file leaf-file-name="BlockerPanel.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/components/BlockerPanel.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.9801325" vertical-offset="0" max-vertical-offset="2392">
-              <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="115" max-vertical-offset="910">
+              <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#100#163#0" expanded="true" />
+                <element signature="e#108#136#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MarketView.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/MarketView.as">
+      <file leaf-file-name="TurnView.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/TurnView.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="1118">
-              <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1432" max-vertical-offset="2678">
+              <caret line="64" column="67" selection-start-line="64" selection-start-column="67" selection-end-line="64" selection-end-column="67" />
               <folding>
-                <element signature="e#134#206#0" expanded="true" />
+                <element signature="e#100#169#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KingpinView.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/KingpinView.as">
+      <file leaf-file-name="StockShareView.as" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/StockShareView.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1432" max-vertical-offset="3224">
-              <caret line="62" column="71" selection-start-line="62" selection-start-column="71" selection-end-line="62" selection-end-column="71" />
+            <state vertical-scroll-proportion="0.6199262" vertical-offset="1874" max-vertical-offset="9152">
+              <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#100#173#0" expanded="true" />
+                <element signature="e#134#210#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StringUtils.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/StringUtils.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="524" max-vertical-offset="1066">
-              <caret line="27" column="44" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -126,8 +111,8 @@
       <file leaf-file-name="GameView.as" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/GameView.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1172" max-vertical-offset="2054">
-              <caret line="66" column="35" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="538" max-vertical-offset="3666">
+              <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#134#204#0" expanded="true" />
@@ -136,11 +121,50 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IHistoryModel.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/IHistoryModel.as">
+      <file leaf-file-name="MarketController.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/MarketController.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="520">
-              <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1796" max-vertical-offset="2964">
+              <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#140#205#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HeaderBar.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/HeaderBar.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2124" max-vertical-offset="3250">
+              <caret line="98" column="44" selection-start-line="98" selection-start-column="44" selection-end-line="98" selection-end-column="44" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#99#169#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TransactionLogView.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/TransactionLogView.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="1326">
+              <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#99#169#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TransactionLogModel.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/TransactionLogModel.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1092">
+              <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -148,40 +172,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StockShareView.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/StockShareView.as">
+      <file leaf-file-name="SoundController.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/SoundController.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="5854" max-vertical-offset="6578">
-              <caret line="320" column="25" selection-start-line="320" selection-start-column="25" selection-end-line="320" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="546" max-vertical-offset="1716">
+              <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
               <folding>
-                <element signature="e#134#210#0" expanded="true" />
-                <element signature="n#!!block;n#enabled#0;n#StockShareView#0;n#view#0" expanded="false" />
-                <element signature="n#!!block;n#enabled#1;n#StockShareView#0;n#view#0" expanded="false" />
-                <element signature="n#!!block;n#drawBackground#0;n#StockShareView#0;n#view#0" expanded="false" />
-                <element signature="n#!!block;n#onSellAction#0;n#StockShareView#0;n#view#0" expanded="false" />
-                <element signature="n#!!block;n#onBuyAction#0;n#StockShareView#0;n#view#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StyleGroup.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/themes/StyleGroup.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="184" max-vertical-offset="858">
-              <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GraphButton.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/components/GraphButton.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="910">
-              <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#105#130#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -195,23 +192,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/themes/ThemeFactory.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/TurnTimerControler.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/MarketTendencyShape.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/SoundRandomGeneratorView.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/components/BorderBackground.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/components/ComponentBase.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/MarketView.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/event/BonusEvent.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/ReputationController.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/event/ReputationEvent.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/components/ProgressBar.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/event/TurnEvent.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/TurnModel.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/ReputationView.as" />
         <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/InvestorsView.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/FundsView.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/TurnView.as" />
         <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/event/KingpinStatusEvent.as" />
         <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/event/ReputationStatusEvent.as" />
         <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/ReputationModel.as" />
@@ -220,32 +201,48 @@
         <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/event/MarketActionEvent.as" />
         <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/KingpinController.as" />
         <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/event/InvestorsEvent.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/BottomBar.as" />
         <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/KingpinModel.as" />
         <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/InvestorsModel.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/ResponsabilitiesView.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/TurnControler.as" />
         <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/InvestorsController.as" />
         <option value="$PROJECT_DIR$/src/Main.as" />
         <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/event/SoundRandomGeneratorEvent.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/GameController.as" />
         <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/SoundRandomGeneratorController.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/FundsModel.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/SoundRandomGeneratorModel.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/MarketModel.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/MarketController.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/GameModel.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/StockShareModel.as" />
         <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/StockShareController.as" />
         <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/components/BitmapLabelContainer.as" />
         <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/IHistoryModel.as" />
         <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/components/BitmapLabelButton.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/GameView.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/StockShareView.as" />
         <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/components/GraphButton.as" />
         <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/KingpinView.as" />
-        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/StringUtils.as" />
         <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/MarketHistoryView.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/StringUtils.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/SoundRandomGeneratorModel.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/FundsModel.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/BaseModel.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/GameStatsSingleton.as" />
+        <option value="$PROJECT_DIR$/src/index.html" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/MarketView.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/PanelIntro.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/TurnControler.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/StockShareModel.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/FundsView.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/GameOverView.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/event/GameEvent.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/GameController.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/GameModel.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/BottomBar.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/ResponsabilitiesView.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/MarketModel.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/TransactionLogController.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/TransactionLogView.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/TransactionLogModel.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/SoundController.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/MarketController.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/HeaderBar.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/GameView.as" />
+        <option value="$PROJECT_DIR$/src/WackAStock.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/components/BlockerPanel.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/TurnView.as" />
+        <option value="$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/StockShareView.as" />
       </list>
     </option>
   </component>
@@ -528,154 +525,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockBrokers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhackAStock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.bytesfromouterspace.stockbrokers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockBrokers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhackAStock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.bytesfromouterspace.stockbrokers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockBrokers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhackAStock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.bytesfromouterspace.stockbrokers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockBrokers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhackAStock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.bytesfromouterspace.stockbrokers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockBrokers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhackAStock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.bytesfromouterspace.stockbrokers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="event" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockBrokers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhackAStock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.bytesfromouterspace.stockbrokers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockBrokers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhackAStock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fonts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockBrokers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhackAStock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="audio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -698,12 +547,21 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="LayoutCode.rearrangeEntriesECMA Script Level 4" value="false" />
     <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="SearchEverywhereHistoryKey" value="Game&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/com/bytesfromouterspace/stockbrokers/view/GameView.as&#10;GameV&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/com/bytesfromouterspace/stockbrokers/view/GameView.as&#10;mar&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/com/bytesfromouterspace/stockbrokers/model/MarketModel.as&#10;Ki&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/com/bytesfromouterspace/stockbrokers/view/KingpinView.as&#10;Inves&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/com/bytesfromouterspace/stockbrokers/view/InvestorsView.as&#10;GameC&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/com/bytesfromouterspace/stockbrokers/controller/GameController.as&#10;re&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/com/bytesfromouterspace/stockbrokers/model/ReputationModel.as&#10;Gamev&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/com/bytesfromouterspace/stockbrokers/view/GameView.as&#10;turn&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/com/bytesfromouterspace/stockbrokers/view/TurnView.as&#10;Main&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/Main.as&#10;Botto&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/com/bytesfromouterspace/stockbrokers/ui/BottomBar.as&#10;Compo&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/com/bytesfromouterspace/stockbrokers/ui/components/ComponentBase.as" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="SearchEverywhereHistoryKey" value="Stoc&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/com/bytesfromouterspace/stockbrokers/view/StockShareView.as&#10;GameV&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/com/bytesfromouterspace/stockbrokers/view/GameView.as&#10;GameM&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/com/bytesfromouterspace/stockbrokers/model/GameModel.as&#10;Game&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/com/bytesfromouterspace/stockbrokers/view/GameView.as&#10;mar&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/com/bytesfromouterspace/stockbrokers/model/MarketModel.as&#10;Ki&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/com/bytesfromouterspace/stockbrokers/view/KingpinView.as&#10;Inves&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/com/bytesfromouterspace/stockbrokers/view/InvestorsView.as&#10;GameC&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/com/bytesfromouterspace/stockbrokers/controller/GameController.as&#10;re&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/com/bytesfromouterspace/stockbrokers/model/ReputationModel.as&#10;Gamev&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/com/bytesfromouterspace/stockbrokers/view/GameView.as&#10;turn&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/com/bytesfromouterspace/stockbrokers/view/TurnView.as&#10;Main&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/Main.as&#10;Botto&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/com/bytesfromouterspace/stockbrokers/ui/BottomBar.as&#10;Compo&#9;FILE&#9;file://E:/IJWorkspaces/StockBrokers/src/com/bytesfromouterspace/stockbrokers/ui/components/ComponentBase.as" />
+    <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
+    <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="stockbrokers" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\IJWorkspaces\StockBrokers\src\com\bytesfromouterspace\stockbrokers\view" />
+      <recent name="E:\IJWorkspaces\StockBrokers\src" />
       <recent name="E:\IJWorkspaces\StockBrokers\src\assets\fonts" />
       <recent name="E:\IJWorkspaces\StockBrokers\src\assets\audio" />
     </key>
@@ -713,11 +571,11 @@
       <recent name="E:\IJWorkspaces\StockBrokers\src\com\bytesfromouterspace\stockbrokers\ui\components" />
     </key>
     <key name="CreateActionScriptClassDialog.DESTINATION_PACKAGE_RECENT_KEY">
-      <recent name="com.bytesfromouterspace.stockbrokers.ui.components" />
-      <recent name="com.bytesfromouterspace.stockbrokers.model" />
+      <recent name="com.bytesfromouterspace.stockbrokers.controller" />
       <recent name="com.bytesfromouterspace.stockbrokers.view" />
+      <recent name="com.bytesfromouterspace.stockbrokers.model" />
+      <recent name="com.bytesfromouterspace.stockbrokers.ui.components" />
       <recent name="com.bytesfromouterspace.stockbrokers.event" />
-      <recent name="com.bytesfromouterspace.stockbrokers.ui" />
     </key>
     <key name="com.intellij.javascript.flex.refactoring.moveClass.FlexMoveClassDialog.target_package">
       <recent name="com.bytesfromouterspace.stockbrokers.ui" />
@@ -991,9 +849,9 @@
       </option>
       <option name="mobileRunTarget" value="Emulator" />
       <option name="moduleName" value="WhackAStock" />
-      <option name="overriddenMainClass" value="" />
-      <option name="overriddenOutputFileName" value="" />
-      <option name="overrideMainClass" value="false" />
+      <option name="overriddenMainClass" value="WackAStock" />
+      <option name="overriddenOutputFileName" value="WackAStock.swf" />
+      <option name="overrideMainClass" value="true" />
       <option name="runTrusted" value="true" />
       <option name="screenDpi" value="0" />
       <option name="screenHeight" value="0" />
@@ -1022,12 +880,12 @@
       <updated>1424807283627</updated>
       <workItem from="1424807285482" duration="642000" />
       <workItem from="1424950429423" duration="11846000" />
-      <workItem from="1424966080452" duration="121284000" />
+      <workItem from="1424966080452" duration="153146000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133772000" />
+    <option name="totallyTimeSpent" value="165634000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1051,30 +909,31 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38975966" sideWeight="0.38489583" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38972163" sideWeight="0.38539445" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27623126" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27623126" sideWeight="0.565032" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3372591" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38972163" sideWeight="0.61510414" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38972163" sideWeight="0.61460555" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18443497" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18443497" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869378" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -1103,7 +962,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="23" />
+      <option name="time" value="29" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1112,189 +971,12 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/themes/DefaultTheme.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.029115342" vertical-offset="0" max-vertical-offset="4940">
-          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-          <folding>
-            <element signature="e#139#167#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/themes/ITheme.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="962">
-          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-          <folding>
-            <element signature="e#139#167#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/themes/ThemeFactory.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.028697573" vertical-offset="0" max-vertical-offset="1092">
-          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/MarketTendencyShape.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.028697573" vertical-offset="0" max-vertical-offset="1846">
-          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Programas/Adobe CC/Adobe Flash Builder 4.7 (64 Bit)/sdks/4.6.0/frameworks/libs/player/11.1/playerglobal.swc!/library.swf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33228347" vertical-offset="44093" max-vertical-offset="258622">
-          <caret line="1704" column="52" selection-start-line="1704" selection-start-column="46" selection-end-line="1704" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/components/BorderBackground.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2254" max-vertical-offset="3120">
-          <caret line="96" column="77" selection-start-line="96" selection-start-column="77" selection-end-line="96" selection-end-column="77" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/components/ComponentBase.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="2106">
-          <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/components/Button.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="3224">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-          <folding>
-            <element signature="e#143#171#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/event/BonusEvent.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="806">
-          <caret line="6" column="27" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="27" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/ReputationController.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1352">
-          <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#105#171#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/event/TransactionEvent.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="962">
-          <caret line="8" column="45" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/event/ReputationEvent.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="832">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/components/ProgressBar.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="70" max-vertical-offset="1976">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="28" />
-          <folding>
-            <element signature="e#108#135#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/event/TurnEvent.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
-          <caret line="11" column="62" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/TurnView.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1432" max-vertical-offset="2704">
-          <caret line="88" column="30" selection-start-line="88" selection-start-column="30" selection-end-line="88" selection-end-column="42" />
-          <folding>
-            <element signature="e#100#169#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/event/ReputationStatusEvent.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="806">
-          <caret line="23" column="76" selection-start-line="23" selection-start-column="76" selection-end-line="23" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/ReputationModel.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="888" max-vertical-offset="1794">
-          <caret line="53" column="94" selection-start-line="53" selection-start-column="94" selection-end-line="53" selection-end-column="94" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#136#197#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/event/KingpinEvent.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="754">
-          <caret line="10" column="54" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/KingpinController.as">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="884">
           <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/FundsView.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="496" max-vertical-offset="1768">
-          <caret line="40" column="29" selection-start-line="24" selection-start-column="11" selection-end-line="40" selection-end-column="29" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#100#166#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1309,44 +991,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/BottomBar.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="236" max-vertical-offset="962">
-          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/InvestorsModel.as">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="1352">
           <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/ResponsabilitiesView.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1068" max-vertical-offset="1794">
-          <caret line="59" column="46" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#99#164#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/TurnControler.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="756" max-vertical-offset="1404">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#140#201#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1372,42 +1022,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="649" max-vertical-offset="1248">
-          <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
-          <folding>
-            <element signature="e#15#85#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/event/SoundRandomGeneratorEvent.as">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="806">
           <caret line="19" column="63" selection-start-line="19" selection-start-column="63" selection-end-line="19" selection-end-column="63" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/GameController.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1276" max-vertical-offset="1924">
-          <caret line="55" column="39" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#140#201#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/FundsModel.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="96" max-vertical-offset="1482">
-          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
-          <folding>
-            <element signature="e#135#201#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1422,66 +1041,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/SoundRandomGeneratorModel.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1248" max-vertical-offset="2392">
-          <caret line="68" column="12" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#135#211#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/InvestorsView.as">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="106" max-vertical-offset="1222">
           <caret line="25" column="26" selection-start-line="16" selection-start-column="12" selection-end-line="25" selection-end-column="26" />
           <folding>
             <element signature="e#99#174#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/ReputationView.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="304" max-vertical-offset="1612">
-          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="27" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#99#175#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/MarketModel.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1926" max-vertical-offset="2574">
-          <caret line="89" column="36" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#136#202#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/MarketController.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="626" max-vertical-offset="2548">
-          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#140#205#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/GameModel.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="286" max-vertical-offset="1196">
-          <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1494,31 +1059,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/StockShareModel.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2912" max-vertical-offset="4186">
-          <caret line="141" column="62" selection-start-line="141" selection-start-column="62" selection-end-line="141" selection-end-column="62" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#136#202#0" expanded="true" />
-            <element signature="n#!!block;n#update#0;n#StockShareModel#0;n#model#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/StockShareController.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="236" max-vertical-offset="962">
-          <caret line="26" column="43" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="43" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/IHistoryModel.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="520">
+        <state vertical-scroll-proportion="0.3156733" vertical-offset="0" max-vertical-offset="906">
           <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -1526,83 +1069,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/GameView.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1172" max-vertical-offset="2054">
-          <caret line="66" column="35" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#134#204#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/components/GraphButton.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="910">
+        <state vertical-scroll-proportion="0.56953645" vertical-offset="4" max-vertical-offset="910">
           <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/MarketView.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="1118">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-          <folding>
-            <element signature="e#134#206#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/KingpinView.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1432" max-vertical-offset="3224">
-          <caret line="62" column="71" selection-start-line="62" selection-start-column="71" selection-end-line="62" selection-end-column="71" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#100#173#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/StringUtils.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="524" max-vertical-offset="1066">
-          <caret line="27" column="44" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/StockShareView.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5854" max-vertical-offset="6578">
-          <caret line="320" column="25" selection-start-line="320" selection-start-column="25" selection-end-line="320" selection-end-column="25" />
-          <folding>
-            <element signature="e#134#210#0" expanded="true" />
-            <element signature="n#!!block;n#enabled#0;n#StockShareView#0;n#view#0" expanded="false" />
-            <element signature="n#!!block;n#enabled#1;n#StockShareView#0;n#view#0" expanded="false" />
-            <element signature="n#!!block;n#drawBackground#0;n#StockShareView#0;n#view#0" expanded="false" />
-            <element signature="n#!!block;n#onSellAction#0;n#StockShareView#0;n#view#0" expanded="false" />
-            <element signature="n#!!block;n#onBuyAction#0;n#StockShareView#0;n#view#0" expanded="false" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/themes/StyleGroup.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="184" max-vertical-offset="858">
+        <state vertical-scroll-proportion="0.401766" vertical-offset="0" max-vertical-offset="906">
           <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/KingpinModel.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37306842" vertical-offset="0" max-vertical-offset="2392">
+          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#100#163#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/MarketHistoryView.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2342" max-vertical-offset="3770">
-          <caret line="97" column="18" selection-start-line="97" selection-start-column="18" selection-end-line="97" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1987" max-vertical-offset="3770">
+          <caret line="90" column="17" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="17" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#100#164#0" expanded="true" />
@@ -1610,13 +1109,365 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/KingpinModel.as">
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/StockShareController.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.9801325" vertical-offset="0" max-vertical-offset="2392">
-          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="314" max-vertical-offset="962">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#100#163#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/components/Button.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1583" max-vertical-offset="3198">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/components/BorderBackground.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2472" max-vertical-offset="3120">
+          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/StringUtils.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1066">
+          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/SoundRandomGeneratorModel.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="964" max-vertical-offset="2444">
+          <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#135#211#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/FundsModel.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="80" max-vertical-offset="1508">
+          <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+          <folding>
+            <element signature="e#135#201#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/BaseModel.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="624">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/GameStatsSingleton.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="754">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/swfobject.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="20306">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/playerProductInstall.swf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="648">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.387096" vertical-offset="0" max-vertical-offset="2392">
+          <caret line="10" column="50" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/KingpinView.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1276" max-vertical-offset="3224">
+          <caret line="63" column="30" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#100#173#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/ReputationView.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="304" max-vertical-offset="1612">
+          <caret line="31" column="26" selection-start-line="28" selection-start-column="12" selection-end-line="31" selection-end-column="26" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#99#175#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/MarketView.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="943" max-vertical-offset="1976">
+          <caret line="63" column="28" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
+          <folding>
+            <element signature="e#134#206#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/themes/DefaultTheme.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3767" max-vertical-offset="4940">
+          <caret line="151" column="9" selection-start-line="151" selection-start-column="9" selection-end-line="151" selection-end-column="9" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#139#167#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/HelpView.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1003" max-vertical-offset="1768">
+          <caret line="59" column="62" selection-start-line="59" selection-start-column="62" selection-end-line="59" selection-end-column="62" />
+          <folding>
+            <element signature="e#100#171#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/TurnControler.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="782" max-vertical-offset="1586">
+          <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#140#201#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/StockShareModel.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1765" max-vertical-offset="5018">
+          <caret line="84" column="50" selection-start-line="84" selection-start-column="50" selection-end-line="84" selection-end-column="50" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/GameOverView.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="1482">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/event/GameEvent.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="728">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/GameController.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1326" max-vertical-offset="2314">
+          <caret line="63" column="27" selection-start-line="63" selection-start-column="27" selection-end-line="63" selection-end-column="27" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#141#202#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/GameModel.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="834" max-vertical-offset="1560">
+          <caret line="50" column="62" selection-start-line="50" selection-start-column="62" selection-end-line="50" selection-end-column="62" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/FundsView.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="1872">
+          <caret line="48" column="125" selection-start-line="48" selection-start-column="97" selection-end-line="48" selection-end-column="125" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/MarketModel.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="444" max-vertical-offset="3354">
+          <caret line="39" column="58" selection-start-line="39" selection-start-column="58" selection-end-line="39" selection-end-column="58" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#136#202#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/TransactionLogController.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="650">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/BottomBar.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="962">
+          <caret line="21" column="33" selection-start-line="17" selection-start-column="12" selection-end-line="21" selection-end-column="33" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/ResponsabilitiesView.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="314" max-vertical-offset="1352">
+          <caret line="34" column="34" selection-start-line="25" selection-start-column="12" selection-end-line="34" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/TransactionLogView.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="1326">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#99#169#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/model/TransactionLogModel.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1092">
+          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/SoundController.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="546" max-vertical-offset="1716">
+          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+          <folding>
+            <element signature="e#105#130#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/controller/MarketController.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1796" max-vertical-offset="2964">
+          <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#140#205#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/HeaderBar.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2124" max-vertical-offset="3250">
+          <caret line="98" column="44" selection-start-line="98" selection-start-column="44" selection-end-line="98" selection-end-column="44" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#99#169#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/GameView.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="538" max-vertical-offset="3666">
+          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#134#204#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WackAStock.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="1326">
+          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+          <folding>
+            <element signature="e#15#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/ui/components/BlockerPanel.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="115" max-vertical-offset="910">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding>
+            <element signature="e#108#136#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/TurnView.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1432" max-vertical-offset="2678">
+          <caret line="64" column="67" selection-start-line="64" selection-start-column="67" selection-end-line="64" selection-end-column="67" />
+          <folding>
+            <element signature="e#100#169#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bytesfromouterspace/stockbrokers/view/StockShareView.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6199262" vertical-offset="1874" max-vertical-offset="9152">
+          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding>
+            <element signature="e#134#210#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1673,7 +1524,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>StockBrokers</last-edited>
+          <last-edited>WhackAStock</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1686,7 +1537,7 @@
       </state>
       <state key="ProjectJDKs.UI">
         <settings>
-          <last-edited>4.6.0</last-edited>
+          <last-edited>3.6.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

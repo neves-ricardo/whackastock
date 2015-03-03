@@ -15,7 +15,7 @@ package com.bytesfromouterspace.stockbrokers.ui {
 
         public static function formatCurrency(value:Number):String {
             var isNegative:Boolean = value < 0;
-            var numString:String = isNegative ? (value*-1).toString() : value.toString();
+            var numString:String = isNegative ? (value*-1).toFixed(0) : value.toFixed(0);
             var result:String = '';
 
             while (numString.length > 3)  {

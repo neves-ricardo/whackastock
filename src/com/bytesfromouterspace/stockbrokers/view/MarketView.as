@@ -6,11 +6,14 @@ package com.bytesfromouterspace.stockbrokers.view {
     import com.bytesfromouterspace.stockbrokers.model.MarketModel;
     import com.bytesfromouterspace.stockbrokers.ui.components.ComponentBase;
 
+    import flash.events.Event;
+
     public class MarketView extends ComponentBase {
 
         private var _model:MarketModel;
         private var _controller:MarketController;
         private var _stockViews:Vector.<StockShareView>;
+        private var _animateCount:int = 8;
 
         public function MarketView(model:MarketModel, controller:MarketController) {
             super(821, 310);
@@ -32,6 +35,36 @@ package com.bytesfromouterspace.stockbrokers.view {
                     positionX = 0;
                     positionY += stockView.height + gap;
                     _stockViews[i].x += 1; // gap adjust
+                }
+            }
+            destroyHandler = onDestroy;
+            addEventListener(Event.ENTER_FRAME, onCheckAnimations);
+        }
+
+        private function onDestroy():void {
+            if(hasEventListener(Event.ENTER_FRAME)) {
+                removeEventListener(Event.ENTER_FRAME, onCheckAnimations);
+            }
+            removeChildren();
+            for(var i:int = 0; i < _stockViews.length; i++) {
+                _stockViews[i] = null;
+            }
+            _stockViews = null;
+        }
+
+        private function onCheckAnimations(event:Event):void {
+            var blinkEnabled:Boolean = false;
+            if(_animateCount > 4) {
+                blinkEnabled = true;
+            } else if(_animateCount > 0) {
+                blinkEnabled = false;
+            } else if(_animateCount <= 0) {
+                _animateCount = 9;
+            }
+            _animateCount--;
+            for(var i:int = 0; i < _stockViews.length; i++) {
+                if(_stockViews[i].animate) {
+                    _stockViews[i].blinkOwned = blinkEnabled; //.doAnimation();
                 }
             }
         }

@@ -23,40 +23,32 @@ package com.bytesfromouterspace.stockbrokers.view {
             super(300,22);
             this._model = model;
             _model.addEventListener(InvestorsEvent.CHANGE, onInvestorsChange);
-            var lbl:Bitmap = theme.createBitmapLabel("Rate Expenses / Turn", 12, 0xFFFFFF );
-            lbl.y = 4;
-            _backgroundRates = new BorderBackground(100, 22);
-            _backgroundRates.backgroundColor = 0x164259;
-            _backgroundRates.borderColor = 0x12638D;
-            _backgroundRates.x = lbl.width + 5;
-            _backgroundRates.y = 1;
-            addChild(_backgroundRates);
+            var lbl:Bitmap = theme.createBitmapLabel("Rates / Turn", 10, 0xFFFFFF);
+            lbl.y = 5;
+
             addChild(lbl);
-            _labelRates = new Label(100, 22, StringUtils.formatCurrency(_model.responsabilitiesRates), 14, 0xFFFFFF, "04b08");
+            _labelRates = new Label(100, 22, StringUtils.formatCurrency(_model.responsabilitiesRates+1000), 12, 0xFFFFFF, "visitor1");
+            _labelRates.background.backgroundColor = 0x164259;
+            _labelRates.background.borderColor = 0x12638D;
             _labelRates.x = lbl.width + 5;
             _labelRates.y = 2;
             addChild(_labelRates);
 
-            lbl = theme.createBitmapLabel("Total Capital Loaned", 12, 0xFFFFFF );
+            lbl = theme.createBitmapLabel("Loans", 10, 0xFFFFFF );
             lbl.x = _labelRates.x + _labelRates.width + 40;
-            lbl.y = 4;
+            lbl.y = 5;
             addChild(lbl);
 
-            _backgroundLoaned = new BorderBackground(120, 22);
-            _backgroundLoaned.backgroundColor = 0x164259;
-            _backgroundLoaned.borderColor = 0x12638D;
-            _backgroundLoaned.x = lbl.width + 5 + lbl.x;
-            _backgroundLoaned.y = 1;
-            addChild(_backgroundLoaned);
-
-            _labelLoaned = new Label(120, 22, StringUtils.formatCurrency(_model.responsabilitiesTotal), 14, 0xFFFFFF, "04b08");
+            _labelLoaned = new Label(120, 22, StringUtils.formatCurrency(_model.responsabilitiesTotal), 12, 0xFFFFFF, "visitor1");
+            _labelLoaned.background.backgroundColor = 0x164259;
+            _labelLoaned.background.borderColor = 0x12638D;
             _labelLoaned.x = lbl.width + 5 +  lbl.x;
             _labelLoaned.y = 2;
             addChild(_labelLoaned);
         }
 
         private function onInvestorsChange(event:InvestorsEvent):void {
-            _labelRates.text = StringUtils.formatCurrency(_model.responsabilitiesRates);
+            _labelRates.text = StringUtils.formatCurrency(_model.responsabilitiesRates+1000);
             _labelLoaned.text = StringUtils.formatCurrency(_model.responsabilitiesTotal);
         }
     }

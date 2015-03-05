@@ -3,6 +3,7 @@
  */
 package com.bytesfromouterspace.stockbrokers.controller {
     import com.bytesfromouterspace.stockbrokers.event.BonusEvent;
+    import com.bytesfromouterspace.stockbrokers.event.GameEvent;
     import com.bytesfromouterspace.stockbrokers.event.ReputationStatusEvent;
     import com.bytesfromouterspace.stockbrokers.model.TurnModel;
 
@@ -20,7 +21,13 @@ package com.bytesfromouterspace.stockbrokers.controller {
             this._model = model;
             _tmr = new Timer(_tickDuration * 1000);
             _tmr.addEventListener(TimerEvent.TIMER, onTick);
+            model.addEventListener(GameEvent.GAME_OVER, onGameOver);
+        }
 
+        private function onGameOver(event:GameEvent):void {
+            if(_tmr) {
+                _tmr.reset();
+            }
         }
 
         private function onTick(event:TimerEvent):void {

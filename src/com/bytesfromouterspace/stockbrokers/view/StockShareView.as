@@ -121,6 +121,15 @@ package com.bytesfromouterspace.stockbrokers.view {
             }
         }
 
+        public function gameEnd():void {
+            _btnBuy10.enabled = false;
+            _btnBuy100.enabled = false;
+            _btnBuy1000.enabled = false;
+            _btnSell10.enabled = false;
+            _btnSell100.enabled = false;
+            _btnSell1000.enabled = false;
+        }
+
         private function drawBackground():void {
             graphics.clear();
 

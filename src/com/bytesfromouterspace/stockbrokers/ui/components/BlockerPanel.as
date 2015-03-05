@@ -9,8 +9,8 @@ package com.bytesfromouterspace.stockbrokers.ui.components {
 
         private var blockSprite:Sprite;
 
-        public function BlockerPanel() {
-            super(822,634);
+        public function BlockerPanel(_w:Number = 822, _h:Number = 634) {
+            super(_w,_h);
             blockSprite = new Sprite();
             blockSprite.graphics.beginFill(0x212121, 0.9);
             blockSprite.graphics.drawRect(5, 5,_width-10, _height-10);

@@ -2,14 +2,14 @@
 <project name="module_whackastock" default="compile.module.whackastock">
   <dirname property="module.whackastock.basedir" file="${ant.file.module_whackastock}"/>
   
-  <property name="module.jdk.home.whackastock" value="${jdk.home.flex_4_14}"/>
-  <property name="module.jdk.bin.whackastock" value="${jdk.bin.flex_4_14}"/>
-  <property name="module.jdk.classpath.whackastock" value="jdk.classpath.flex_4_14"/>
+  <property name="module.jdk.home.whackastock" value="${jdk.home.4.6.0}"/>
+  <property name="module.jdk.bin.whackastock" value="${jdk.bin.4.6.0}"/>
+  <property name="module.jdk.classpath.whackastock" value="jdk.classpath.4.6.0"/>
   
   <property name="compiler.args.whackastock" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
   
-  <property name="whackastock.output.dir" value="${module.whackastock.basedir}/../../xampp/htdocs/whackastock/production/WhackAStock"/>
-  <property name="whackastock.testoutput.dir" value="${module.whackastock.basedir}/../../xampp/htdocs/whackastock/test/WhackAStock"/>
+  <property name="whackastock.output.dir" value="${module.whackastock.basedir}/out/production/WhackAStock"/>
+  <property name="whackastock.testoutput.dir" value="${module.whackastock.basedir}/out/test/WhackAStock"/>
   
   <path id="whackastock.module.bootclasspath">
     <!-- Paths to be included in compilation bootclasspath -->

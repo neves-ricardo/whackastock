@@ -6,6 +6,7 @@ package com.bytesfromouterspace.stockbrokers.view {
     import com.bytesfromouterspace.stockbrokers.event.GameEvent;
     import com.bytesfromouterspace.stockbrokers.event.ReputationEvent;
     import com.bytesfromouterspace.stockbrokers.model.GameModel;
+    import com.bytesfromouterspace.stockbrokers.model.GameStatsSessionModel;
     import com.bytesfromouterspace.stockbrokers.model.IHistoryModel;
     import com.bytesfromouterspace.stockbrokers.ui.BottomBar;
     import com.bytesfromouterspace.stockbrokers.ui.components.BlockerPanel;
@@ -42,6 +43,10 @@ package com.bytesfromouterspace.stockbrokers.view {
             headerBar = new HeaderBar(model, controller);
             headerBar.x = 10;
             headerBar.y = 10;
+            headerBar.addEventListener(GameEvent.REQUEST_HELP, onRequestHelp);
+            headerBar.addEventListener(GameEvent.REQUEST_SCORES, onRequestHiScores);
+            headerBar.addEventListener(GameEvent.REQUEST_STATS, onRequestStats);
+            headerBar.addEventListener(GameEvent.REQUEST_END_GAME, onRequestEndGame);
             addChild(headerBar);
 
             historyView = new MarketHistoryView(model.market);
@@ -86,6 +91,31 @@ package com.bytesfromouterspace.stockbrokers.view {
             addChild(intro);
         }
 
+        private function onRequestEndGame(event:GameEvent):void {
+            model.endGame();
+        }
+
+        private function onRequestStats(event:GameEvent):void {
+            controller.pause();
+            var statsSource:GameStatsSessionModel = model.getGameStatsSession();
+            var stats:GameStatsView = new GameStatsView(statsSource);
+            stats.addEventListener(Event.CLOSE, onGameStatsClosed);
+            stats.x = 10;
+            stats.y = 10;
+            addChild(stats);
+        }
+
+        private function onGameStatsClosed(event:Event):void {
+            var stats:GameStatsView = event.target as GameStatsView;
+            stats.removeEventListener(Event.CLOSE, onGameStatsClosed);
+            removeChild(stats);
+            controller.resume();
+        }
+
+        private function onRequestHiScores(event:GameEvent):void {
+
+        }
+
         private function onIntroClosed(event:Event):void {
             var intro:HelpView = event.target as HelpView;
             intro.removeEventListener(Event.CLOSE, onIntroClosed);
@@ -94,7 +124,12 @@ package com.bytesfromouterspace.stockbrokers.view {
         }
 
         private function onGameOver(event:GameEvent):void {
-            var gameOverView:GameOverView = new GameOverView();
+            marketView.gameEnd();
+            turnView.gameEnd();
+            investorsView.gameEnd();
+            var statsSource:GameStatsSessionModel = model.getGameStatsSession();
+            //var stats:GameStatsView = new GameStatsView(statsSource);
+            var gameOverView:GameOverView = new GameOverView(statsSource);
             gameOverView.addEventListener(Event.CLOSE, onGameOverClosed);
             gameOverView.x = 10;
             gameOverView.y = 10;
@@ -116,7 +151,7 @@ package com.bytesfromouterspace.stockbrokers.view {
             }
         }
 
-        public function requestHelpMenu():void {
+        public function onRequestHelp(event:GameEvent):void {
             controller.pause();
             var help:HelpView = new HelpView(false);
             help.addEventListener(Event.CLOSE, onPanelClosed);

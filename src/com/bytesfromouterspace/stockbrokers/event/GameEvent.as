@@ -7,6 +7,10 @@ package com.bytesfromouterspace.stockbrokers.event {
     public class GameEvent extends Event {
 
         public static const GAME_OVER:String = "gameOver";
+        public static const REQUEST_HELP:String = "requestHelp";
+        public static const REQUEST_STATS:String = "requestStats";
+        public static const REQUEST_SCORES:String = "requestHiScores";
+        public static const REQUEST_END_GAME:String = "requestEndGame";
 
         public function GameEvent(type:String, bubbles:Boolean = false, cancelable:Boolean = false) {
             super(type, bubbles, cancelable);

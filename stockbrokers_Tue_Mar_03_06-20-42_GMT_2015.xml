@@ -61,9 +61,9 @@
   
   <!-- JDK definitions -->
   
-  <property name="project.jdk.home" value="${jdk.home.flex_4_14}"/>
-  <property name="project.jdk.bin" value="${jdk.bin.flex_4_14}"/>
-  <property name="project.jdk.classpath" value="jdk.classpath.flex_4_14"/>
+  <property name="project.jdk.home" value=""/>
+  <property name="project.jdk.bin" value=""/>
+  <property name="project.jdk.classpath" value=""/>
   <!-- Register Custom Compiler Taskdefs -->
   <property name="javac2.home" value="${idea.home}/lib"/>
   <path id="javac2.classpath">

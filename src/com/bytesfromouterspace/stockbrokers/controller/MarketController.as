@@ -5,6 +5,7 @@ package com.bytesfromouterspace.stockbrokers.controller {
     import com.bytesfromouterspace.stockbrokers.event.InvestorsEvent;
     import com.bytesfromouterspace.stockbrokers.event.SoundRandomGeneratorEvent;
     import com.bytesfromouterspace.stockbrokers.event.TransactionEvent;
+    import com.bytesfromouterspace.stockbrokers.model.BaseModel;
     import com.bytesfromouterspace.stockbrokers.model.MarketModel;
     import com.bytesfromouterspace.stockbrokers.model.ReputationModel;
     import com.bytesfromouterspace.stockbrokers.model.StockShareModel;
@@ -44,6 +45,10 @@ package com.bytesfromouterspace.stockbrokers.controller {
                 transactionValue = event.amount * stock.currentValue;
                 if(event.amount <= stock.quantityAvailable) {
                     if(transactionValue < funds) {
+                        _model.incStat("totalBuys");
+                        _model.incStat("qtdSharesBuys", event.amount);
+                        _model.incStat("volumeBuys", transactionValue);
+                        _model.multiStat("Buys", transactionValue, BaseModel.STAT_MAX);
                         stock.doBuy(event.amount);
                         _model.funds.withdraw(transactionValue);
                         logger.log("Bought", event.amount, "of", stock.name, "at",
@@ -66,18 +71,28 @@ package com.bytesfromouterspace.stockbrokers.controller {
             } else if(event.transactionType == TransactionEvent.TRANSACTION_TYPE_SELL) {
                 trace("Transaction Sell: ", event.stockId, event.amount, stock.quantityOwned);
                 if(event.amount <= stock.quantityOwned) {
+                    transactionValue = event.amount * stock.currentValue;
+                    var profit:Number = transactionValue - event.amount * stock.ownedValue;
+                    _model.incStat("numSells");
+                    _model.incStat("qtdSharesSells", event.amount);
+                    _model.incStat("volumeSells", transactionValue);
+                    _model.multiStat("Sells", transactionValue, BaseModel.STAT_MAX);
+
                     stock.doSell(event.amount);
-                    _model.funds.add(event.amount * stock.currentValue);
+                    _model.funds.add(transactionValue);
                     logger.log("Sold", event.amount, "of", stock.name, "at",
                             StringUtils.formatCurrency(stock.currentValue),
-                            " total:", StringUtils.formatCurrency(event.amount * stock.currentValue));
-                    bonusValue = (stock.currentValue < stock.ownedValue) ? -40 : 0;
-                    if(stock.currentValue < stock.ownedValue) {
+                            " total:", StringUtils.formatCurrency(transactionValue),
+                            " profit:", StringUtils.formatCurrency(profit));
+                    if(profit < 0) {
                         bonusValue = -40; // loosing money
-                    } else if(stock.currentValue > stock.ownedValue) {
+                        _model.multiStat("Loss", profit*-1, BaseModel.STAT_MAX, BaseModel.STAT_TOTAL);
+                    } else if(profit > 0) {
                         bonusValue = 40;
+                        _model.multiStat("Profit", profit, BaseModel.STAT_MAX, BaseModel.STAT_TOTAL);
                     } else {
                         bonusValue = 0;
+                        _model.incStat("totalNeutral", transactionValue);
                     }
                     _model.signalReputation(ReputationModel.REP_TYPE_SUCCESSFUL_SELL, bonusValue);
                     SoundController.instance.playCash();

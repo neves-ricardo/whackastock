@@ -35,6 +35,11 @@ package com.bytesfromouterspace.stockbrokers.model {
             if(_value < 0) {
                 _value = 0;
             }
+            if(amount > 0) {
+                incStat("totalRepGained", amount);
+            } else {
+                incStat("totalRepLost", amount);
+            }
             dispatchEvent(new ReputationStatusEvent(ReputationStatusEvent.CHANGE));
             checkReputationLevel();
         }
@@ -53,10 +58,13 @@ package com.bytesfromouterspace.stockbrokers.model {
                 _level = curLevel;
                 dispatchEvent(new ReputationStatusEvent(ReputationStatusEvent.LEVEL_UP, _level));
             }
+            multiStat("ReputationLevel", _level, STAT_CURRENT, STAT_MAX);
+            multiStat("ReputationValue", _value, STAT_CURRENT, STAT_MAX);
         }
 
 
         public function setBonus(bonusCategory:int):void {
+            incStat("totalRepBonus", bonusCategory);
             dispatchEvent(new BonusEvent(bonusCategory));
         }
     }

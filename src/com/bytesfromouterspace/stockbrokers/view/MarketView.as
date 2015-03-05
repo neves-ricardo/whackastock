@@ -68,5 +68,11 @@ package com.bytesfromouterspace.stockbrokers.view {
                 }
             }
         }
+
+        public function gameEnd():void {
+            for(var i:int = 0; i < _stockViews.length; i++) {
+                _stockViews[i].gameEnd();
+            }
+        }
     }
 }

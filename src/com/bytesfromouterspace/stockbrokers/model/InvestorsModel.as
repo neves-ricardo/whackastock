@@ -22,6 +22,7 @@ package com.bytesfromouterspace.stockbrokers.model {
             for(var i:int = 0; i < kingpins.length; i++) {
                 total += kingpins[i].interestRateValue;
             }
+            multiStat("Rates", total, STAT_TOTAL, STAT_MAX);
             return total * -1;
         }
 
@@ -30,15 +31,18 @@ package com.bytesfromouterspace.stockbrokers.model {
             for(var i:int = 0; i < kingpins.length; i++) {
                 total += kingpins[i].capitalDue;
             }
+            multiStat("Loans", total, STAT_CURRENT, STAT_TOTAL, STAT_MAX);
             return total * -1;
         }
 
         public function acceptedLoan(kingpinModel:KingpinModel):void {
+            incStat("acceptedLoans");
             dispatchEvent(new InvestorsEvent(InvestorsEvent.LOAN_ACCEPTED, kingpinModel));
             dispatchEvent(new InvestorsEvent(InvestorsEvent.CHANGE));
         }
 
         public function payLoan(kingpinModel:KingpinModel):void {
+            incStat("paidLoans");
             dispatchEvent(new InvestorsEvent(InvestorsEvent.LOAN_PAY, kingpinModel));
             dispatchEvent(new InvestorsEvent(InvestorsEvent.CHANGE));
         }

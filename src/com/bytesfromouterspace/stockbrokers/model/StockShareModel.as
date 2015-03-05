@@ -126,7 +126,7 @@ package com.bytesfromouterspace.stockbrokers.model {
             var base:Number = lastValue; // * _basePriceRatio;
             var trans:Number = lastValue * _transactionInfluenceRatio * marketModifier * randMod;
             var inf:Number = lastValue * _generatorInfluenceRatio * influence * randMod;
-            var newPrice:Number = base + trans + inf;
+            var newPrice:Number = centRound(base + trans + inf);
             if(marketModifier > 0) {
                 marketModifier = marketModifier - 0.1 > 0 ? marketModifier - 0.1 : 0;
             }
@@ -141,8 +141,13 @@ package com.bytesfromouterspace.stockbrokers.model {
                     trans.toFixed(2), inf.toFixed(2), influence.toFixed(2), _delta.toFixed(2)];
                 trace("|" + fields.join("\t|") + "\t|");
             }
+            //trace(newPrice,"\t",centRound(newPrice));
 
             currentValue = newPrice;
+        }
+
+        private function centRound(num:Number):Number {
+            return int(num*100)/100;
         }
 
         public function get currentValue():Number {

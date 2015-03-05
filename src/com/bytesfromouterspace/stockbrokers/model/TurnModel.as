@@ -2,6 +2,7 @@
  * Created by ricardo_neves at bytesfromouterspace.com on 28/02/2015.
  */
 package com.bytesfromouterspace.stockbrokers.model {
+    import com.bytesfromouterspace.stockbrokers.event.GameEvent;
     import com.bytesfromouterspace.stockbrokers.event.TurnEvent;
 
     [Event(name="timerStarted", type="com.bytesfromouterspace.stockbrokers.event.TurnEvent")]
@@ -14,6 +15,7 @@ package com.bytesfromouterspace.stockbrokers.model {
         private var _totalTime:Number;
         private var _currentTime:Number;
         private var _resets:int = 0;
+        private var _running:Boolean;
 
         public function TurnModel(turnDuration:int) {
             super();
@@ -48,7 +50,9 @@ package com.bytesfromouterspace.stockbrokers.model {
         public function startTurn():void {
             _currentTurn++;
             _currentTime = _totalTime;
+            _running = true;
             dispatchEvent(new TurnEvent(TurnEvent.TIMER_START));
+            stat("numturns", _currentTurn);
         }
 
         public function decrease(qtd:Number):void {
@@ -66,6 +70,7 @@ package com.bytesfromouterspace.stockbrokers.model {
             if(_currentTime > _totalTime) {
                 _currentTime = _totalTime;
             }
+            incStat("bonustime", bonusCategory);
             dispatchEvent(new TurnEvent(TurnEvent.TIMER_TICK));
         }
 
@@ -75,6 +80,7 @@ package com.bytesfromouterspace.stockbrokers.model {
 
         public function set resets(value:int):void {
             _resets = value;
+            stat("resets", _resets);
             dispatchEvent(new TurnEvent(TurnEvent.RESET_CHANGE));
         }
 
@@ -82,7 +88,19 @@ package com.bytesfromouterspace.stockbrokers.model {
             if(_resets > 0) {
                 resets--;
                 _currentTime = _totalTime;
+                incStat("resetsUsed");
                 dispatchEvent(new TurnEvent(TurnEvent.TIMER_TICK));
+            }
+        }
+
+        public function get running():Boolean {
+            return _running;
+        }
+
+        public function set running(value:Boolean):void {
+            _running = value;
+            if(!value) {
+                dispatchEvent(new GameEvent(GameEvent.GAME_OVER));
             }
         }
     }

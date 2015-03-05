@@ -19,6 +19,7 @@ package com.bytesfromouterspace.stockbrokers.model {
 
         public function withdraw(amount:Number):void {
             if(_funds >= amount) {
+                incStat("withdraw", amount);
                 funds -= amount;
             } else {
                 dispatchEvent(new ReputationEvent(ReputationModel.REP_TYPE_FRAUD_INSUFFICIENT_FUNDS));
@@ -36,6 +37,7 @@ package com.bytesfromouterspace.stockbrokers.model {
 
         public function add(amount:Number):void {
             funds += amount;
+            incStat("added", amount);
         }
 
         public function get available():Number {
@@ -44,6 +46,7 @@ package com.bytesfromouterspace.stockbrokers.model {
 
         private function set funds(value:Number):void {
             _funds = value;
+            multiStat("funds", _funds, STAT_CURRENT, STAT_MIN, STAT_MAX);
             dispatchEvent(new Event(Event.CHANGE));
         }
 

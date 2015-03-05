@@ -6,7 +6,7 @@ package com.bytesfromouterspace.stockbrokers.model {
 
     public class GameModel extends BaseModel {
 
-        public static const VERSION:String = "1.0.1";
+        public static const VERSION:String = "1.0.2";
 
         public var turn:TurnModel;
         public var market:MarketModel;
@@ -48,7 +48,18 @@ package com.bytesfromouterspace.stockbrokers.model {
         }
 
         public function endGame():void {
+            turn.running = false;
             dispatchEvent(new GameEvent(GameEvent.GAME_OVER));
+        }
+
+        public function getGameStatsSession():GameStatsSessionModel {
+            var statsSource:GameStatsSessionModel = new GameStatsSessionModel();
+            statsSource.agregateStats("inv", investors.stats);
+            statsSource.agregateStats("fund",market.funds.stats);
+            statsSource.agregateStats("mark",market.stats);
+            statsSource.agregateStats("rep", reputation.stats);
+            statsSource.agregateStats("turn", turn.stats);
+            return statsSource;
         }
     }
 }

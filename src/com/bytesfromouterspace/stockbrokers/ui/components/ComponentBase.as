@@ -7,6 +7,10 @@ package com.bytesfromouterspace.stockbrokers.ui.components {
     import com.bytesfromouterspace.stockbrokers.ui.themes.ITheme;
     import com.bytesfromouterspace.stockbrokers.ui.themes.ThemeFactory;
 
+    import flash.display.Bitmap;
+
+    import flash.display.DisplayObject;
+
     import flash.display.Sprite;
     import flash.events.Event;
 
@@ -21,6 +25,7 @@ package com.bytesfromouterspace.stockbrokers.ui.components {
 
         protected var _width:Number;
         protected var _height:Number;
+        protected var disableAutoDestruction:Boolean = false;
 
         public function ComponentBase(_width: Number,_height: Number) {
             super();
@@ -35,8 +40,10 @@ package com.bytesfromouterspace.stockbrokers.ui.components {
             if(hasEventListener(Event.ADDED_TO_STAGE)) {
                 removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
             }
-            if(!hasEventListener(Event.REMOVED_FROM_STAGE)) {
-                addEventListener(Event.REMOVED_FROM_STAGE, onRemovedFromStage);
+            if(!disableAutoDestruction) {
+                if (!hasEventListener(Event.REMOVED_FROM_STAGE)) {
+                    addEventListener(Event.REMOVED_FROM_STAGE, onRemovedFromStage);
+                }
             }
             if(initHandler != null) {
                 initHandler.call();
@@ -52,7 +59,26 @@ package com.bytesfromouterspace.stockbrokers.ui.components {
             if(destroyHandler != null) {
                 destroyHandler.call();
             }
+            destroyDisplayList();
             destroyHandler = null;
+            initHandler = null;
+        }
+
+        protected function destroyDisplayList():void {
+            var i:int = numChildren - 1;
+            var dso:DisplayObject;
+            while(i > 0) {
+                dso = removeChildAt(i);
+                if(dso) {
+                    if (dso is Bitmap) {
+                        if((dso as Bitmap).bitmapData) {
+                            (dso as Bitmap).bitmapData.dispose();
+                        }
+                    }
+                }
+                dso = null;
+                i--;
+            }
         }
 
         public function get changed():Boolean {

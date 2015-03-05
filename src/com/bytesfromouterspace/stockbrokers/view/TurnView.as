@@ -95,5 +95,9 @@ package com.bytesfromouterspace.stockbrokers.view {
         private function onResetTimer(event:MouseEvent):void {
             _controller.resetTimer();
         }
+
+        public function gameEnd():void {
+            _btnReset.enabled = false;
+        }
     }
 }

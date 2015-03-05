@@ -66,6 +66,8 @@ package com.bytesfromouterspace.stockbrokers.controller {
         }
 
 
+
+
         public function pause():void {
             if(_started) {
                 turn.pause();

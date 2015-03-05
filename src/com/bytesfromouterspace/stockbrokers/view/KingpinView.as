@@ -114,5 +114,10 @@ package com.bytesfromouterspace.stockbrokers.view {
         private function onAcceptRequested(event:MouseEvent):void {
             _controller.acceptLoan();
         }
+
+        public function gameEnd():void {
+            _btnAccept.enabled = false;
+            _btnPay.enabled = false;
+        }
     }
 }

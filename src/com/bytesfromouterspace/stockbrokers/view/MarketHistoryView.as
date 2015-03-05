@@ -84,7 +84,8 @@ package com.bytesfromouterspace.stockbrokers.view {
             var data:Vector.<Number> = model.history;
             var i:int;
             var len:int = data.length;
-            for(i=0; i < len; i++) {
+            var start:int = len < 100 ? 0 : len - 100;
+            for(i=start; i < len; i++) {
                 total += data[i];
                 if(data[i] > max) {
                     max = data[i];
@@ -103,7 +104,7 @@ package com.bytesfromouterspace.stockbrokers.view {
             plotArea.graphics.lineTo(0, py);
             plotArea.graphics.lineStyle(1, 0xFFCC00);
             var aux:Number;
-            for (i = 0; i < len; i++) {
+            for (i=start; i < len; i++) {
                 if(step < 414) {
                     aux = data[i] / max;
                     py = 128 - 128 * (aux);

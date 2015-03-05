@@ -8,6 +8,7 @@ package com.bytesfromouterspace.stockbrokers.view {
     import com.bytesfromouterspace.stockbrokers.ui.components.ComponentBase;
 
     import flash.display.Bitmap;
+    import flash.display.DisplayObject;
 
     public class InvestorsView extends ComponentBase {
 
@@ -38,6 +39,16 @@ package com.bytesfromouterspace.stockbrokers.view {
                 positionY += kingpinView.height + gap;
             }
 
+        }
+
+        public function gameEnd():void {
+            var dso:DisplayObject;
+            for(var i:int = 0; i < numChildren; i++) {
+                dso = getChildAt(i);
+                if(dso && (dso is KingpinView)) {
+                    (dso as KingpinView).gameEnd();
+                }
+            }
         }
     }
 }

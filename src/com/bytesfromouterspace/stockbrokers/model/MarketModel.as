@@ -59,6 +59,7 @@ package com.bytesfromouterspace.stockbrokers.model {
 
         public function payTurnTax(tax:int):Boolean {
             if(funds.validatedWithdraw(tax)) {
+                incStat("turnTaxes");
                 return true;
             }
             signalReputation(ReputationModel.REP_TYPE_FRAUD_INSUFFICIENT_FUNDS);
@@ -109,14 +110,19 @@ package com.bytesfromouterspace.stockbrokers.model {
             for(var i:int = 0; i < stockShares.length; i++) {
                 _marketValue += stockShares[i].marketValue;
             }
+            multiStat("MarketValue", _marketValue, STAT_MIN, STAT_MAX);
             return _marketValue;
         }
 
         public function get ownedStocksValue():Number {
             var _stocksValue:Number = 0;
+            var _stocksNumber:Number = 0;
             for(var i:int = 0; i < stockShares.length; i++) {
                 _stocksValue += stockShares[i].currentOwnedValue;
+                _stocksNumber += stockShares[i].quantityOwned;
             }
+            multiStat("OwnedStocksValue", _stocksValue, STAT_CURRENT, STAT_MAX);
+            multiStat("OwnedStocksNumber", _stocksNumber, STAT_CURRENT, STAT_MAX);
             return _stocksValue;
         }
     }
